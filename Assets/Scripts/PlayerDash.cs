@@ -15,11 +15,18 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private int sf_dashCooldown;
 
     private bool canJump;
+    private bool isDashing;
+    private int isDashingCount;
     private int dashCoolDownBuffer;
+
+    Vector2 buffVelocity ;
 
     void Start()
     {
+        
         canJump = false;
+        isDashing = false;
+        isDashingCount = 20;
         dashCoolDownBuffer = sf_dashCooldown;
     }
 
@@ -27,16 +34,39 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate()
     {            
         dashCoolDownBuffer--;
+
+        if(isDashingCount <= 0){
+            isDashing = false;
+        }
+        else{
+            isDashingCount--;
+        }
+
+
         if(dashCoolDownBuffer < 0 && !canJump){
             dashCoolDownBuffer = sf_dashCooldown;
             canJump = true;
-            Debug.Log("CAN JUMP");
         }
 
         if(Input.GetAxis("Jump") == 1 && canJump){
+            isDashing = true;
             canJump = false;
+            isDashingCount = 25;
             sf_playerRB.velocity += sf_dashSpeed * new Vector2(1,0);
             dashCoolDownBuffer = sf_dashCooldown;
         }
+
+        buffVelocity = sf_playerRB.velocity;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+       
+        if(col.gameObject.tag == "canBeDestroyed" && isDashing){
+                //todo put here explosions and stuff
+              Destroy(col.gameObject);
+        }
+
+        sf_playerRB.velocity= buffVelocity;
     }
 }
