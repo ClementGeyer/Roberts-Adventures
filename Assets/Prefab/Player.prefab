@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe086b471b8d324d953f56939234a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   grapplingGun: {fileID: 57448182793109950}
   m_lineRenderer: {fileID: 57448181546633837}
   percision: 40
@@ -506,8 +506,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcdb4cc9a8885344daf067c7c0f6eb9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   grappleRope: {fileID: 57448181546633834}
   grappleToAll: 1
   grappableLayerNumber: 5
