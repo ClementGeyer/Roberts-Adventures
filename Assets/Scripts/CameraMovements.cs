@@ -15,7 +15,6 @@ public class CameraMovements : MonoBehaviour
     void Start()
     {
          tf = this.GetComponent<Transform>();
-         
     }
 
    
@@ -27,7 +26,6 @@ public class CameraMovements : MonoBehaviour
 
         if( tf.position.x < hero.GetComponent<Transform>().position.x )
            tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);
-        
         
     }
 }
