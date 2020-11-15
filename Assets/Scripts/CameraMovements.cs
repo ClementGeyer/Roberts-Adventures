@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class CameraMovements : MonoBehaviour
 {
+    [Header("Camera parameters")]
+    [SerializeField] private float offsetCamera = 0.0f;
+    [SerializeField] private float speedCamera = 0.05f;
+    [SerializeField] private float increaseSpeedCamera = 0.05f;
+    
     public GameObject hero;
-    public float offsetCamera = 10.0f;
-    private Rigidbody2D rb;
+    private Transform tf;
 
     void Start()
     {
-         rb = this.GetComponent<Rigidbody2D>();
+         tf = this.GetComponent<Transform>();
          
     }
 
    
     void FixedUpdate()
     {
-        //if( this.GetComponent<Transform>().position.x - offsetCamera < hero.GetComponent<Transform>().position.x ){
-           rb.velocity = new Vector3(hero.GetComponent<Rigidbody2D>().velocity.x, 0 ,-10);
+        
+        speedCamera *= 1+ increaseSpeedCamera;
+        tf.position = new Vector3(  tf.position.x + speedCamera, tf.position.y,  tf.position.z);
+
+        if( tf.position.x < hero.GetComponent<Transform>().position.x )
+           tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);
         
         
     }
