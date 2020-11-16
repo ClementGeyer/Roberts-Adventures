@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
-
-    
     [Header("Player rigidbody")]
     [SerializeField] private Rigidbody2D sf_playerRB;
 
@@ -32,7 +30,10 @@ public class PlayerDash : MonoBehaviour
 
 
     void FixedUpdate()
-    {            
+    { 
+        // Permet de récupérer la position de la souris dans la scène
+        var worldMousePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z));
+        
         dashCoolDownBuffer--;
 
         if(isDashingCount <= 0){
@@ -41,18 +42,22 @@ public class PlayerDash : MonoBehaviour
         else{
             isDashingCount--;
         }
-
-
+        
         if(dashCoolDownBuffer < 0 && !canJump){
             dashCoolDownBuffer = sf_dashCooldown;
             canJump = true;
         }
 
-        if(Input.GetAxis("Jump") == 1 && canJump){
+        if(Input.GetAxis("Jump") == 1 && canJump)
+        {
+            // Direction du dash calculée en fonction de la position de la souris et du personnage
+            var direction = worldMousePosition - this.transform.position;
+            direction.Normalize();
+            
             isDashing = true;
             canJump = false;
             isDashingCount = 25;
-            sf_playerRB.velocity += sf_dashSpeed * new Vector2(1,0);
+            sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
             dashCoolDownBuffer = sf_dashCooldown;
         }
 
