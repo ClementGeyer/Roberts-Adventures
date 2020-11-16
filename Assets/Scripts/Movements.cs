@@ -28,5 +28,11 @@ public class Movements : MonoBehaviour
         rb.velocity *= vDrag;
       }
     }
+    
+    void OnBecameInvisible () 
+    {
+        //Destroy (gameObject);
+        Debug.Log("Destruction du joueur");
+    }
 
 }
