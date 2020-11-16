@@ -1,0 +1,30 @@
+﻿using UnityEngine;
+using UnityEngine.UIElements;
+
+public class MovingObstacle : MonoBehaviour
+{
+    public Transform[] waypoints;
+    public float speed;
+
+    private Transform target;
+    private int destPoint = 0;
+
+
+    void Start()
+    {
+        target = waypoints[0];
+    }
+
+    void Update()
+    {
+        Vector3 dir = target.position - transform.position;
+
+        transform.Translate(dir.normalized * (speed * Time.deltaTime), Space.World);
+
+        if (Vector3.Distance(transform.position, target.position) < 0.3f)
+        {
+            destPoint = (destPoint + 1) % waypoints.Length;
+            target = waypoints[destPoint];
+        }
+    }
+}

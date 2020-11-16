@@ -24,13 +24,13 @@ public class Progression : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float length = (sf_finish.position.x - sf_start.position.x);
-        int posPlayer = (int)((sf_player.position.x/ length ) * 100);
-        if(posPlayer < 0 )
-            posPlayer = 0;
-        else if(posPlayer > 100)
-            posPlayer = 100;
+            float length = (sf_finish.position.x - sf_start.position.x);
+            int posPlayer = (int)((sf_player.position.x/ length ) * 100);
+            if(posPlayer < 0 )
+                posPlayer = 0;
+            else if(posPlayer > 100)
+                posPlayer = 100;
 
-        sf_text.text =  "" + posPlayer + " %";
+            sf_text.text =  "" + posPlayer + " %";
     }
 }

@@ -15,11 +15,30 @@ public class CameraMovements : MonoBehaviour
     void Start()
     {
          tf = this.GetComponent<Transform>();
+<<<<<<< HEAD
+=======
+         
+>>>>>>> 7493ce2d2beaaac33c078cafa95aaae31520b04f
     }
 
    
     void FixedUpdate()
     {
+<<<<<<< HEAD
+=======
+        
+        speedCamera *= 1+ increaseSpeedCamera;
+        tf.position = new Vector3(  tf.position.x + speedCamera, tf.position.y,  tf.position.z);
+
+        if( tf.position.x < hero.GetComponent<Transform>().position.x )
+           tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);*/
+        
+        
+        //Pour que la camera suive completement le joueur (pour les tests)
+        /*tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);
+        
+        tf.position = new Vector3(tf.position.x , hero.GetComponent<Transform>().position.y,  tf.position.z);*/
+>>>>>>> 7493ce2d2beaaac33c078cafa95aaae31520b04f
         
         speedCamera *= 1+ increaseSpeedCamera;
         tf.position = new Vector3(  tf.position.x + speedCamera, tf.position.y,  tf.position.z);
