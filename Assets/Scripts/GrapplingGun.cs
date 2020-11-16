@@ -107,7 +107,7 @@ public class GrapplingGun : MonoBehaviour
         Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
         RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector);
 
-        if ((_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll) &&
+        if (_hit && (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll) &&
             (Vector2.Distance(_hit.point, firePoint.position) <= maxDistance || !hasMaxDistance))
         {
             grapplePoint = _hit.point;
