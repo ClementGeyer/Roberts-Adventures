@@ -26,7 +26,7 @@ public class CameraMovements : MonoBehaviour
         tf.position = new Vector3(  tf.position.x + speedCamera, tf.position.y,  tf.position.z);
 
         if( tf.position.x < hero.GetComponent<Transform>().position.x )
-           tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);*/
+           tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);
         
         
         //Pour que la camera suive completement le joueur (pour les tests)
