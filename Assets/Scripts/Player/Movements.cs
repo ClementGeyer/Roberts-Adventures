@@ -29,10 +29,11 @@ public class Movements : MonoBehaviour
       }
     }
     
+    // Lorsque le joueur sort de le camera
     void OnBecameInvisible () 
     {
         //Destroy (gameObject);
-        Debug.Log("Destruction du joueur");
+        Debug.Log("Destruction du joueur (sortie de la caméra)");
     }
 
 }
