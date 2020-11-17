@@ -6,7 +6,6 @@
     <e p="C:\Users\cleme\Documents\t432_liy20_t3_b" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="OptionsMenu.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Bonuses" t="Include">
             <e p="Bonus.cs" t="Include" />
@@ -17,8 +16,6 @@
           <e p="HUD" t="Include">
             <e p="Progression.cs" t="Include" />
           </e>
-          <e p="LevelSelection.cs" t="Include" />
-          <e p="MainMenu.cs" t="Include" />
           <e p="Map" t="Include">
             <e p="DeathZone.cs" t="Include" />
             <e p="MovingObstacle.cs" t="Include" />
@@ -29,6 +26,7 @@
           <e p="Menu" t="Include">
             <e p="LevelSelection.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
+            <e p="OptionsMenu.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="GrapplingGun" t="Include">
