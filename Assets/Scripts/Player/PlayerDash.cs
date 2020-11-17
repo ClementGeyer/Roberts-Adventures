@@ -8,9 +8,14 @@ public class PlayerDash : MonoBehaviour
     [Header("Player rigidbody")]
     [SerializeField] private Rigidbody2D sf_playerRB;
 
+    [Header("Raycast2D origin")]
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private int maxDistance;
+
     [Header("Values to change which affect the Dash")]
     [SerializeField] private float sf_dashSpeed;
     [SerializeField] private int sf_dashCooldown;
+    
 
     private bool canJump;
     private bool isDashing;
@@ -31,10 +36,16 @@ public class PlayerDash : MonoBehaviour
 
     void FixedUpdate()
     { 
+        dash();
+        buffVelocity = sf_playerRB.velocity;
+    }
+
+    void dash(){
         // Permet de récupérer la position de la souris dans la scène
         var worldMousePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z));
         
         dashCoolDownBuffer--;
+
 
         if(isDashingCount <= 0){
             isDashing = false;
@@ -48,11 +59,16 @@ public class PlayerDash : MonoBehaviour
             canJump = true;
         }
 
-        if(Input.GetAxis("Jump") == 1 && canJump)
+        if(Input.GetAxis("Jump") != 0 && canJump)
         {
             // Direction du dash calculée en fonction de la position de la souris et du personnage
             var direction = worldMousePosition - this.transform.position;
             direction.Normalize();
+
+            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction);
+            if(hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
+                Destroy(hit.transform.gameObject);
+            }
             
             isDashing = true;
             canJump = false;
@@ -60,18 +76,6 @@ public class PlayerDash : MonoBehaviour
             sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
             dashCoolDownBuffer = sf_dashCooldown;
         }
-
-        buffVelocity = sf_playerRB.velocity;
     }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-       
-        if(col.gameObject.tag == "canBeDestroyed" && isDashing){
-                //todo put here explosions and stuff
-              Destroy(col.gameObject);
-        }
-
-        sf_playerRB.velocity= buffVelocity;
-    }
+  
 }
