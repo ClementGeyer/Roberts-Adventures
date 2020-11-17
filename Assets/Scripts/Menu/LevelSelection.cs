@@ -8,5 +8,9 @@ public class LevelSelection : MonoBehaviour
     {
         SceneManager.LoadScene(lvlIndex);
     }
-    
+
+    public void backArrow()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
