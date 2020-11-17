@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 46232801}
   m_Layer: 0
   m_Name: Plateform (4)
-  m_TagString: Untagged
+  m_TagString: grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 109522057}
   m_Layer: 0
   m_Name: Plateform (2)
-  m_TagString: Untagged
+  m_TagString: grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -642,9 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d73806844269b4cb131874141f20a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ropeMaterial: {fileID: 2100000, guid: e7a4052b078ac02479444b720aacd8cf, type: 2}
-  materialChangerate: 50
-  materialChangerateBuffer: 0
 --- !u!1 &605578230
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +655,7 @@ GameObject:
   - component: {fileID: 605578231}
   m_Layer: 0
   m_Name: Plateform (3)
-  m_TagString: Untagged
+  m_TagString: grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,7 +1165,7 @@ GameObject:
   - component: {fileID: 1714084621}
   m_Layer: 0
   m_Name: Plateform (6)
-  m_TagString: Untagged
+  m_TagString: grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1277,7 +1274,7 @@ GameObject:
   - component: {fileID: 1906333775}
   m_Layer: 0
   m_Name: Plateform (5)
-  m_TagString: Untagged
+  m_TagString: grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1386,7 +1383,7 @@ GameObject:
   - component: {fileID: 2137735735}
   m_Layer: 0
   m_Name: Plateform (1)
-  m_TagString: Untagged
+  m_TagString: grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1563,7 +1560,19 @@ PrefabInstance:
       objectReference: {fileID: 1324641785}
     - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: grappleToAll
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: grappableTag
+      value: grappable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: hasMaxDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: maxDistance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7273685538617773412, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_LocalPosition.x
