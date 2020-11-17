@@ -28,5 +28,12 @@ public class Movements : MonoBehaviour
         rb.velocity *= vDrag;
       }
     }
+    
+    // Lorsque le joueur sort de le camera
+    void OnBecameInvisible () 
+    {
+        //Destroy (gameObject);
+        Debug.Log("Destruction du joueur (sortie de la caméra)");
+    }
 
 }
