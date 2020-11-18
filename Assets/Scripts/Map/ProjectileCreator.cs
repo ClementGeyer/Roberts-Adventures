@@ -1,4 +1,3 @@
-﻿using System;
 using UnityEngine;
 
 public class ProjectileCreator : MonoBehaviour
@@ -7,6 +6,7 @@ public class ProjectileCreator : MonoBehaviour
     public Transform wayPoint;
     public Transform player;
     public GameObject projectile;
+    public float[] yPositionProjectiles;
     private bool spawned;
 
     private void Update()
@@ -15,9 +15,12 @@ public class ProjectileCreator : MonoBehaviour
         {
             // Création de 3 projectiles
             var position = wayPoint.position;
-            Instantiate(projectile, position + new Vector3(340, 0, 0), Quaternion.identity);
-            Instantiate(projectile, position + new Vector3(340, 20, 0), Quaternion.identity);
-            Instantiate(projectile, position + new Vector3(340, 40, 0), Quaternion.identity);
+            
+            for (int i = 0; i < yPositionProjectiles.Length; i++)
+            {
+                Instantiate(projectile, position + new Vector3(200, yPositionProjectiles[i], 0), Quaternion.identity);
+            }
+            
             spawned = true;
         }
     }

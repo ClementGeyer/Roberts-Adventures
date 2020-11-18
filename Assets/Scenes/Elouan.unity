@@ -1657,6 +1657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: hasMaxDistance
+<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
@@ -1685,7 +1686,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273685538668248971, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_LocalScale.z
+=======
+>>>>>>> c537e7f98562d9fcfdc95a4e345aaa1b6dc645a8
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: maxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538617773412, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.3
       objectReference: {fileID: 0}
     - target: {fileID: 7273685539912414861, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
