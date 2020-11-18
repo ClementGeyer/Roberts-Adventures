@@ -18,6 +18,7 @@
           </e>
           <e p="Map" t="Include">
             <e p="DeathZone.cs" t="Include" />
+            <e p="DestroyMapPart.cs" t="Include" />
             <e p="MovingObstacle.cs" t="Include" />
             <e p="ProjectileCreator.cs" t="Include" />
             <e p="ProjectileMovement.cs" t="Include" />
@@ -27,6 +28,7 @@
             <e p="LevelSelection.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="OptionsMenu.cs" t="Include" />
+            <e p="TextGrow.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="GrapplingGun" t="Include">
@@ -34,6 +36,7 @@
               <e p="GrapplingRope.cs" t="Include" />
               <e p="RopeColor.cs" t="Include" />
             </e>
+            <e p="JellyMesh.cs" t="Include" />
             <e p="Movements.cs" t="Include" />
             <e p="PlayerDash.cs" t="Include" />
           </e>
