@@ -639,9 +639,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 600659505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d73806844269b4cb131874141f20a3, type: 3}
+  m_Script: {fileID: 11500000, guid: d1dbff7e54064a345922786e952c9914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeMaterial: {fileID: 2100000, guid: eb15025f32c4d4f4fae5a4ab30387f94, type: 2}
+  materialChangerate: 20
 --- !u!1 &605578230
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1000,7 @@ MonoBehaviour:
   offsetCamera: 0
   speedCamera: 0.05
   increaseSpeedCamera: 0.005
+  maxspeed: 0
   hero: {fileID: 1414526640}
 --- !u!50 &1324641788
 Rigidbody2D:
@@ -1574,6 +1577,18 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: autoConfigureDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: launchToPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273685538117277055, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: rotateOverTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7273685538617773412, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.3
@@ -1638,6 +1653,10 @@ PrefabInstance:
       propertyPath: m_Parameters.textureMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7273685539912414861, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb15025f32c4d4f4fae5a4ab30387f94, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
 --- !u!1001 &7327093950850034911

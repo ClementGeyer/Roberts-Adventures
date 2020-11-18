@@ -73,7 +73,7 @@ public class GrapplingGun : MonoBehaviour
             if (launchToPoint && grappleRope.isGrappling && launchType == LaunchType.Transform_Launch)
             {
                 Vector2 pos = firePoint.position - gunHolder.localPosition;
-                Vector2 targetPos = grapplePoint - pos;
+                Vector2 targetPos = grapplePoint - pos ;
                 gunHolder.position = Vector2.Lerp(gunHolder.position, targetPos, Time.deltaTime * launchSpeed);
             }
         }
@@ -144,7 +144,7 @@ public class GrapplingGun : MonoBehaviour
                 case LaunchType.Physics_Launch:
                     m_springJoint2D.connectedAnchor = grapplePoint;
                     Vector2 distanceVector = firePoint.position - gunHolder.position;
-                    m_springJoint2D.distance = distanceVector.magnitude;
+                    m_springJoint2D.distance = distanceVector.magnitude/2;
                     m_springJoint2D.frequency = launchSpeed;
                     m_springJoint2D.enabled = true;
                     break;
