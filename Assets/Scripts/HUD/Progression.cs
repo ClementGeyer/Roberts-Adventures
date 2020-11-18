@@ -18,7 +18,7 @@ public class Progression : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sf_text.text =  "" + 0 + " %";
+        sf_text.text =  0 + " %";
     }
 
     // Update is called once per frame
@@ -31,6 +31,6 @@ public class Progression : MonoBehaviour
             else if(posPlayer > 100)
                 posPlayer = 100;
 
-            sf_text.text =  "" + posPlayer + " %";
+            sf_text.text =  posPlayer + " %";
     }
 }

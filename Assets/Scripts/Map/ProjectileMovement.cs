@@ -23,6 +23,9 @@ public class ProjectileMovement : MonoBehaviour
     // Lorsque le projectile sort de le camera
     void OnBecameInvisible () 
     {
+        //Supprime le gameObject
         Destroy (gameObject);
+        //Supprime l'isntance du script utilisé
+        Destroy(this);
     }
 }
