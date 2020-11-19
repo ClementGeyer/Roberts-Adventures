@@ -57,8 +57,33 @@
       <change afterPath="$PROJECT_DIR$/FETCH_HEAD" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/Assets/MainMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainMixer.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelSelection.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelSelection.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OptionsMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OptionsMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LevelSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LevelSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/OptionsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/OptionsMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/FAVPNG_icon-design-radio-button_DuPTe7WJ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/FAVPNG_icon-design-radio-button_DuPTe7WJ.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_ettings.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/_ettings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_ptions_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_ptions_bg.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_rame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_rame.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_s_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_s_button.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/background.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/options_frame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/options_frame.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/Assets/Materials/GrapplingRopeMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/GrapplingRopeMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/BonusSlowmotion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/BonusSlowmotion.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/MovingObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/MovingObstacle.prefab" afterDir="false" />
@@ -85,6 +110,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
@@ -104,8 +130,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsMenu.cs" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TextGrow.cs" />
+        <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LevelSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/OptionsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovements.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/PauseMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ButtonGrow.cs" />
+=======
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TextGrow.cs" />
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
       </list>
     </option>
   </component>
@@ -153,7 +191,15 @@
       <workItem from="1605628804581" duration="2740000" />
       <workItem from="1605633435336" duration="27000" />
       <workItem from="1605634468404" duration="3626000" />
+<<<<<<< HEAD
+      <workItem from="1605721129016" duration="1526000" />
+      <workItem from="1605724528964" duration="898000" />
+      <workItem from="1605752557131" duration="8153000" />
+      <workItem from="1605779466769" duration="2387000" />
+      <workItem from="1605808325126" duration="782000" />
+=======
       <workItem from="1605721129016" duration="1225000" />
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
     </task>
     <servers />
   </component>
@@ -178,6 +224,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="313" y="128" width="1200" height="800" key="VCS.FileHistoryDialog" timestamp="1605780960759">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="313" y="128" width="1200" height="800" key="VCS.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1605780960759" />
     <state x="592" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1605629528785">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
