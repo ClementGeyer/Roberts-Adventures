@@ -41,8 +41,12 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
-        
+        //Si le jeu est en pause la commande n'est pas exécutée
+        if (!PauseMenu.GamePaused)
+        {
+            Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
+        }
+
         // Permet de ne pas accélerer le temps plus que la valeur normale
         Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
     }
