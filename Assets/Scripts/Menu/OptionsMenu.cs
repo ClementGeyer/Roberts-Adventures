@@ -1,20 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public AudioMixer audio;
-    
-    public void backArrow()
+    //Cet attribut est le mixer principal de son du jeu
+    public AudioMixer audioMixer;
+    //Cet attribut est le pannel du préfab "Options"
+    public GameObject menu;
+
+    //Cette méthode permet de sortir du menu Options en appuyant sur la flèche
+    public void BackArrow()
     {
-        SceneManager.LoadScene(0);
+        menu.SetActive(false);
     }
 
-    public void setVolume(float volume)
+    //Cette méthode permet de régler le volume du mixer principal en changer le slider dans le menu Options
+    public void SetVolume(float volume)
     {
-        audio.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Volume", volume);
+        
     }
 }

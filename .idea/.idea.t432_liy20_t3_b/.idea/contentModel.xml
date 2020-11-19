@@ -25,9 +25,11 @@
             <e p="RotateWheel.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">
+            <e p="ButtonGrow.cs" t="Include" />
             <e p="LevelSelection.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="OptionsMenu.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
             <e p="TextGrow.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
