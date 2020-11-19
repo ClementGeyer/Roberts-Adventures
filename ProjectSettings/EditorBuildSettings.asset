@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/OptionsMenu.unity
     guid: 876373b7efd42c44bb9bdbdf95ca98b8
   - enabled: 1
-    path: Assets/Scenes/Gautier.unity
-    guid: ce7a18426114c164bbcb4eb5decb228c
+    path: Assets/Scenes/Level01.unity
+    guid: 7ed71ee6fdd999142b49bce0ddf8e2a9
   m_configObjects: {}
