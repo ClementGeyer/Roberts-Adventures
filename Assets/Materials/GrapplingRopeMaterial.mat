@@ -80,6 +80,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
     - _Color: {r: 0.20693696, g: 0.8747492, b: 0.037784338, a: 1}
     - _EmissionColor: {r: 0.20693696, g: 0.8747492, b: 0.037784338, a: 1}
@@ -88,9 +90,13 @@ Material:
     - _EmissionColor: {r: 0.83462024, g: 0.5931241, b: 0.40861183, a: 1}
 >>>>>>> f4f553a046f26ae3d625911dd71aff50c1751f45
 =======
+>>>>>>> 40085bcfd289d67d6f7bc6fa0badf23cf7c829b5
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
+=======
 >>>>>>> 1c4808c86b1cdf82efd37cadc4679f1a3d7f8a8f
+>>>>>>> 40085bcfd289d67d6f7bc6fa0badf23cf7c829b5
   m_BuildTextureStacks: []
