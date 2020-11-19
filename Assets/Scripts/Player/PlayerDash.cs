@@ -11,13 +11,15 @@ public class PlayerDash : MonoBehaviour
     [Header("Raycast2D origin")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private int maxDistance;
+    [SerializeField] private string tagOfKillingWalls;
 
     [Header("Values to change which affect the Dash")]
     [SerializeField] private float sf_dashSpeed;
     [SerializeField] private int sf_dashCooldown;
     
     [Header("Particules")]
-    [SerializeField] private GameObject particules;
+    [SerializeField] private ParticleSystem  DeadParticules;
+    [SerializeField] private ParticleSystem  DashParticules;
     [SerializeField] private float distanceMinToBeDestroyed;
   
     private bool canJump;
@@ -55,12 +57,12 @@ public class PlayerDash : MonoBehaviour
         /*On fait un raycast pour savoir si il touche quelque chose*
             Si oui on regarde son tag et si il correspond, alors on explose le joeuur et on fait apparaitre des particules*/
 
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, Vector3.right);
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position,sf_playerRB.velocity, distanceMinToBeDestroyed);
+    
+        if(hit.transform.gameObject.tag == tagOfKillingWalls && canJump ){
         
-        if(hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= distanceMinToBeDestroyed && canJump ){
-            Instantiate(particules, this.transform.position, Quaternion.identity);
+            Instantiate(DeadParticules, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-
         }
 
     }
@@ -81,6 +83,7 @@ public class PlayerDash : MonoBehaviour
             // Direction du dash calculée en fonction de la position de la souris et du personnage
             var direction = worldMousePosition - this.transform.position;
             direction.Normalize();
+            DashParticules.Play();
 
             RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity);
             if(hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
