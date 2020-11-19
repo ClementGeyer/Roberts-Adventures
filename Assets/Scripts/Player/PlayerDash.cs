@@ -16,13 +16,18 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float sf_dashSpeed;
     [SerializeField] private int sf_dashCooldown;
     
-
+    [Header("Particules")]
+    [SerializeField] private GameObject particules;
+    [SerializeField] private float distanceMinToBeDestroyed;
+  
     private bool canJump;
     private bool isDashing;
     private int isDashingCount;
     private int dashCoolDownBuffer;
+  
 
-    Vector2 buffVelocity ;
+    private Vector2 buffVelocity ;
+
 
     void Start()
     {
@@ -37,7 +42,27 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate()
     { 
         dash();
+        deadDetection();
         buffVelocity = sf_playerRB.velocity;
+
+    }
+
+
+    /*Cette fonction commme son nom l'indique, va détecter si le joueur doit mourir.
+    Il doit mourir si : il touche un objet destructible et qu'il ne dash pas*/
+    void deadDetection(){
+
+        /*On fait un raycast pour savoir si il touche quelque chose*
+            Si oui on regarde son tag et si il correspond, alors on explose le joeuur et on fait apparaitre des particules*/
+
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.position, Vector3.right);
+        
+        if(hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= distanceMinToBeDestroyed && canJump ){
+            Instantiate(particules, this.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+
+        }
+
     }
 
     void dash(){
@@ -46,14 +71,6 @@ public class PlayerDash : MonoBehaviour
         
         dashCoolDownBuffer--;
 
-
-        if(isDashingCount <= 0){
-            isDashing = false;
-        }
-        else{
-            isDashingCount--;
-        }
-        
         if(dashCoolDownBuffer < 0 && !canJump){
             dashCoolDownBuffer = sf_dashCooldown;
             canJump = true;
@@ -65,14 +82,12 @@ public class PlayerDash : MonoBehaviour
             var direction = worldMousePosition - this.transform.position;
             direction.Normalize();
 
-            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction);
+            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity);
             if(hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
                 Destroy(hit.transform.gameObject);
             }
-            
-            isDashing = true;
+
             canJump = false;
-            isDashingCount = 25;
             sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
             dashCoolDownBuffer = sf_dashCooldown;
         }
