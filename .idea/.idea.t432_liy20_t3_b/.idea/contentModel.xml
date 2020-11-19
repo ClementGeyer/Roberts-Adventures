@@ -33,6 +33,7 @@
             <e p="TextGrow.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="EyeRotate.cs" t="Include" />
             <e p="GrapplingGun" t="Include">
               <e p="GrapplingGun.cs" t="Include" />
               <e p="GrapplingRope.cs" t="Include" />

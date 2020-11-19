@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Sprites/_ettings.png.meta
 guid: d45812eb9ac1c5142baf3cafef44bb90
+=======
+guid: 8fc51f22414ad9246bd5c995e6e5201c
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d:Assets/Sprites/ENCOREUNCUBEMAISENMAJ.png.meta
+=======
+guid: d45812eb9ac1c5142baf3cafef44bb90
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -25,8 +25,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b06267c6-f5df-4c15-92af-5ed2787da459" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/PlayerMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/PlayerMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Rope.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Rope.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Shader Graphs_pbr.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Shader Graphs_pbr.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/_oo-normal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/pbr.shadergraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/pbr.shadergraph.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Pipeline.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Pipeline.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Pipeline_Renderer.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Pipeline_Renderer.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/DestructibleObstacle.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/DestructibleObstacle.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Projectiles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Projectiles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DestroyMapPart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DestroyMapPart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/TextGrow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/TextGrow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/JellyMesh.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/JellyMesh.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/SlowMotionBonusSprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/SlowMotionBonusSprite.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/fireworks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/fireworks.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FETCH_HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.t432_liy20_t3_b/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/MainMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainMixer.mixer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelSelection.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelSelection.unity" afterDir="false" />
@@ -51,7 +83,37 @@
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/options_frame.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/options_frame.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/GrapplingRopeMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/GrapplingRopeMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/BonusSlowmotion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/BonusSlowmotion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/MovingObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/MovingObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Projectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/deathZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/deathZone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elouan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elouan.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elouan.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elouan.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelSelection.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelSelection.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OptionsMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OptionsMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMovements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMovements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HUD/Progression.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HUD/Progression.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/DeathZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DeathZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/ProjectileCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/ProjectileCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/ProjectileMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/ProjectileMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Coin.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/_oo-normal.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Level01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Level01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/_ackarrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/_ackarrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +130,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsMenu.cs" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TextGrow.cs" />
         <option value="$PROJECT_DIR$/Assets/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" />
@@ -77,6 +140,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovements.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/ButtonGrow.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu/TextGrow.cs" />
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
       </list>
     </option>
   </component>
@@ -124,11 +191,15 @@
       <workItem from="1605628804581" duration="2740000" />
       <workItem from="1605633435336" duration="27000" />
       <workItem from="1605634468404" duration="3626000" />
+<<<<<<< HEAD
       <workItem from="1605721129016" duration="1526000" />
       <workItem from="1605724528964" duration="898000" />
       <workItem from="1605752557131" duration="8153000" />
       <workItem from="1605779466769" duration="2387000" />
       <workItem from="1605808325126" duration="782000" />
+=======
+      <workItem from="1605721129016" duration="1225000" />
+>>>>>>> 11f38a0c5968109cceff7d0609940fe5512c8e5d
     </task>
     <servers />
   </component>

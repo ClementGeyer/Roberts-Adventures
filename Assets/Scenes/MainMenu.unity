@@ -801,7 +801,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 722933706}
           m_TargetAssemblyTypeName: ButtonGrow, Assembly-CSharp
-          m_MethodName: MouseEnter
+          m_MethodName: ButtonEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -817,7 +817,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 722933706}
           m_TargetAssemblyTypeName: ButtonGrow, Assembly-CSharp
-          m_MethodName: MouseLeave
+          m_MethodName: ButtonLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1281,7 +1281,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1194271907}
           m_TargetAssemblyTypeName: ButtonGrow, Assembly-CSharp
-          m_MethodName: MouseEnter
+          m_MethodName: ButtonEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1297,7 +1297,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1194271907}
           m_TargetAssemblyTypeName: ButtonGrow, Assembly-CSharp
-          m_MethodName: MouseLeave
+          m_MethodName: ButtonLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1826,7 +1826,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2120022154}
           m_TargetAssemblyTypeName: ButtonGrow, Assembly-CSharp
-          m_MethodName: MouseEnter
+          m_MethodName: ButtonEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1842,7 +1842,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2120022154}
           m_TargetAssemblyTypeName: ButtonGrow, Assembly-CSharp
-          m_MethodName: MouseLeave
+          m_MethodName: ButtonLeave
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
