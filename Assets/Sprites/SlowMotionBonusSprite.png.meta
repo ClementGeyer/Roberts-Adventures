@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Sprites/SlowMotionBonusSprite.png.meta
 guid: 2bb822abf0a06e940be5c2de5a8a9645
+=======
+guid: d0644620c8a88a046a8b2057408f2a84
+>>>>>>> 1c4808c86b1cdf82efd37cadc4679f1a3d7f8a8f:Assets/Materials/_oo-normal.jpg.meta
+=======
+guid: 2bb822abf0a06e940be5c2de5a8a9645
+>>>>>>> 1c4808c86b1cdf82efd37cadc4679f1a3d7f8a8f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

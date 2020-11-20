@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 05bb9f67d82f98c4aa9f2a51d8d9dcb2
+<<<<<<< HEAD:Assets/Sprites/boutonSettings.png.meta
+guid: e539d68d24b9b8a44b71078cf0df2f38
+=======
+guid: 11a1a56d13a9f6e49800de389409e4bf
+>>>>>>> 876447f30b94e757912b3f7078dfc2d2ba55fbc1:Assets/Sprites/Plateformes/UnCubeMaisEnVert1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

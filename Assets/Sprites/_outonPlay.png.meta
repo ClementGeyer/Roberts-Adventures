@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d4e9f81c03f04934ebe45989c4bbfc04
+=======
+<<<<<<< HEAD:Assets/Sprites/_outonQuit.png.meta
+guid: 9f8202438ea3aa44a8c96a6bb6ad559f
+=======
+guid: d4e9f81c03f04934ebe45989c4bbfc04
+>>>>>>> 876447f30b94e757912b3f7078dfc2d2ba55fbc1:Assets/Sprites/_outonPlay.png.meta
+>>>>>>> 876447f30b94e757912b3f7078dfc2d2ba55fbc1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
