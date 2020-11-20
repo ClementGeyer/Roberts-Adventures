@@ -6,10 +6,10 @@ namespace Controller
     {
         [Header("Camera parameters")]
         [SerializeField] private float offsetCamera = 0.0f;
-        [SerializeField] private float speedCamera = 0.05f;
+        [SerializeField] public float speedCamera = 0.05f;
         [SerializeField] public float increaseSpeedCamera = 0.05f;
-         public bool shouldMove;
-         public float increaseSpeedCameraBuff = 0.0f;
+        public bool shouldMove;
+        [SerializeField] public float SpeedCameraBuff = 0.0f;
         public float maxspeed; 
 
        
@@ -22,8 +22,8 @@ namespace Controller
         }
         void Start()
         {
-            increaseSpeedCameraBuff = increaseSpeedCamera;
-            shouldMove = true;
+            speedCamera = SpeedCameraBuff;
+            // shouldMove = true;
             tf = this.GetComponent<Transform>();
         }
 
@@ -46,7 +46,7 @@ namespace Controller
                 //Pour que la camera suive completement le joueur (pour les tests)
                 /* tf.position = new Vector3( hero.GetComponent<Transform>().position.x, tf.position.y,  tf.position.z);
             
-            tf.position = new Vector3(tf.position.x , hero.GetComponent<Transform>().position.y,  tf.position.z);*/
+                    tf.position = new Vector3(tf.position.x , hero.GetComponent<Transform>().position.y,  tf.position.z);*/
             }
         }
     }

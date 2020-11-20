@@ -12,8 +12,8 @@ namespace Player
         [SerializeField]private float damping =0.75f;
 
         //On crée 2 mesh, un qui prendra le mesh original, un qui sauvegarde l'état du mesh original
-        private Mesh OriginalMesh, MeshClone;
-        private MeshRenderer renderer;
+        private Mesh originalMesh, meshClone;
+        private new MeshRenderer renderer;
         private JellyVertex[] jellyVertices;
         private Vector3[] vertexArray;
 
@@ -43,23 +43,23 @@ namespace Player
         void Start()
         {
             //On attribue a l'original mesh notre mesh
-            OriginalMesh = GetComponent<MeshFilter>().sharedMesh;
+            originalMesh = GetComponent<MeshFilter>().sharedMesh;
             //On crée un clone du mesh
-            MeshClone = Instantiate(OriginalMesh);
+            meshClone = Instantiate(originalMesh);
             //On attribue au meshfilter du player le clone
-            GetComponent<MeshFilter>().sharedMesh = MeshClone;
+            GetComponent<MeshFilter>().sharedMesh = meshClone;
             //On sauvegarde notre renderer
             renderer = GetComponent<MeshRenderer>();
 
-            jellyVertices = new JellyVertex[MeshClone.vertices.Length];
-            for(int i = 0; i < MeshClone.vertices.Length; i++)
-                jellyVertices[i] = new JellyVertex(i,transform.TransformPoint(MeshClone.vertices[i]));
+            jellyVertices = new JellyVertex[meshClone.vertices.Length];
+            for(int i = 0; i < meshClone.vertices.Length; i++)
+                jellyVertices[i] = new JellyVertex(i,transform.TransformPoint(meshClone.vertices[i]));
         }
 
 
         void FixedUpdate()
         {
-            vertexArray = OriginalMesh.vertices;
+            vertexArray = originalMesh.vertices;
             for(int i = 0; i < jellyVertices.Length; i++ ){
                 Vector3 target = transform.TransformPoint(vertexArray[jellyVertices[i].m_id]);
                 float _intensity = (i - (renderer.bounds.max.y - target.y) / renderer.bounds.size.y) * intensity;
@@ -67,7 +67,7 @@ namespace Player
                 target = transform.InverseTransformPoint(jellyVertices[i].m_position);
                 vertexArray[jellyVertices[i].m_id] = Vector3.Lerp(vertexArray[jellyVertices[i].m_id], target, _intensity);
             }
-            MeshClone.vertices = vertexArray;
+            meshClone.vertices = vertexArray;
         }
     }
 }
