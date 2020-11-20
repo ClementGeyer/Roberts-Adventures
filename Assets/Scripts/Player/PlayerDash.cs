@@ -23,10 +23,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float distanceMinToBeDestroyed;
   
     private bool canJump;
-    private bool isDashing;
-    private int isDashingCount;
     private int dashCoolDownBuffer;
-  
 
     private Vector2 buffVelocity ;
 
@@ -35,8 +32,6 @@ public class PlayerDash : MonoBehaviour
     {
         
         canJump = false;
-        isDashing = false;
-        isDashingCount = 20;
         dashCoolDownBuffer = sf_dashCooldown;
     }
 
@@ -61,9 +56,14 @@ public class PlayerDash : MonoBehaviour
     
         if(hit && hit.transform.gameObject.tag == tagOfKillingWalls && canJump ){
             Instantiate(DeadParticules, this.transform.position, Quaternion.identity);
-            this.gameObject.active = false;
+            killPlayer();
         }
 
+    }
+
+    void killPlayer(){
+        this.gameObject.SetActive(false);
+        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().grapplePoint = new Vector2(this.transform.position.x,this.transform.position.y);
     }
 
     void dash(){
@@ -86,7 +86,7 @@ public class PlayerDash : MonoBehaviour
                 
                 RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity, maxDistance);
                 if(hit && hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
-                  hit.transform.gameObject.active = false;
+                  hit.transform.gameObject.SetActive(false);
                 }
 
                 canJump = false;
