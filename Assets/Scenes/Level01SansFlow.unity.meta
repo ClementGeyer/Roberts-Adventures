@@ -1,5 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/Level01F.unity.meta
+guid: 589fc350a9b9916488f4e6d57f09dd7f
+=======
+<<<<<<<< HEAD:Assets/Scenes/Level01SansFlow.unity.meta
 guid: 15d8d990b0e775e4c8881a6fc75342bb
+========
+<<<<<<< HEAD:Assets/Scenes/Level01F.unity.meta
+guid: a3c7cca13b506fc4cbc0ca6a60141b3e
+>>>>>>> 2c1e6f13a90789a8e9b54bad9514a6ada3820dcb
+=======
+guid: bb104dfb42dc4bb45b62fd235a33c3b1
+folderAsset: yes
+>>>>>>> 2f72da78c727c30c2c8775ab500aee5108dc161e:Assets/Sprites/Plateformes.meta
+<<<<<<< HEAD
+=======
+>>>>>>>> 2c1e6f13a90789a8e9b54bad9514a6ada3820dcb:Assets/Scenes/Level01.unity.meta
+>>>>>>> 2c1e6f13a90789a8e9b54bad9514a6ada3820dcb
 DefaultImporter:
   externalObjects: {}
   userData: 

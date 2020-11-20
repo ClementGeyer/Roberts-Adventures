@@ -1,28 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RopeColor : MonoBehaviour
+namespace Player.GrapplingGun
 {
-    [Header("Material Settings:")]
-    [SerializeField] private Material ropeMaterial ;
-    [SerializeField] private int materialChangerate ;
-    private int materialChangerateBuffer ;
-    void Start()
+    public class RopeColor : MonoBehaviour
     {
-        materialChangerateBuffer = materialChangerate;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        materialChangerate--;
-        if( materialChangerate < 0 ){
-            Color newColor = new Color( Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-            materialChangerate = materialChangerateBuffer;
-            ropeMaterial.color = newColor;
-            ropeMaterial.SetColor("_EmissionColor",newColor);
+        [Header("Material Settings:")]
+        [SerializeField] private Material ropeMaterial ;
+        [SerializeField] private int materialChangerate ;
+        private int materialChangerateBuffer ;
+        void Start()
+        {
+            materialChangerateBuffer = materialChangerate;
         }
+
+        // Update is called once per frame
+        void Update()
+        {
+            materialChangerate--;
+            if( materialChangerate < 0 ){
+                Color newColor = new Color( Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                materialChangerate = materialChangerateBuffer;
+                ropeMaterial.color = newColor;
+                ropeMaterial.SetColor("_EmissionColor",newColor);
+            }
         
+        }
     }
 }

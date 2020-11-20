@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour
 {
@@ -119,6 +119,7 @@ public class GrapplingGun : MonoBehaviour
 
     public void Grapple()
     {
+     
         m_springJoint2D.autoConfigureDistance = false;
         if (!launchToPoint && !autoConfigureDistance)
         {
