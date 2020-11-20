@@ -42,7 +42,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 305675926625704857}
-  - component: {fileID: 5960544537385172418}
   m_Layer: 0
   m_Name: WayPoint2
   m_TagString: Untagged
@@ -64,18 +63,6 @@ Transform:
   m_Father: {fileID: 305675925574871928}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5960544537385172418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305675926625704856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64724d4280ec0204dafd874f6f9c53c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &305675926733194915
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +72,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 305675926733194912}
-  - component: {fileID: 6962772300429954696}
   m_Layer: 0
   m_Name: WayPoint1
   m_TagString: Untagged
@@ -107,18 +93,6 @@ Transform:
   m_Father: {fileID: 305675925574871928}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6962772300429954696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305675926733194915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64724d4280ec0204dafd874f6f9c53c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &305675926783429808
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,10 +105,9 @@ GameObject:
   - component: {fileID: 305675926783429806}
   - component: {fileID: 305675926783429809}
   - component: {fileID: 4010349700619603777}
-  - component: {fileID: 4198757965414893693}
   m_Layer: 0
   m_Name: LowerPlateform
-  m_TagString: Untagged
+  m_TagString: canKillPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,18 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d12173b69b1bb144928a5b56b543b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4198757965414893693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305675926783429808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64724d4280ec0204dafd874f6f9c53c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &305675926783702410
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,10 +276,9 @@ GameObject:
   - component: {fileID: 305675926885420368}
   - component: {fileID: 305675926885420371}
   - component: {fileID: 290817977022187697}
-  - component: {fileID: 6307069469271090956}
   m_Layer: 0
   m_Name: UpperPlateform
-  m_TagString: Untagged
+  m_TagString: canKillPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,17 +384,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d12173b69b1bb144928a5b56b543b4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6307069469271090956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305675926885420370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64724d4280ec0204dafd874f6f9c53c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

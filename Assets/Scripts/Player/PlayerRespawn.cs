@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
     [Header("Scripts")]
-    [SerializeField] private Controller.CameraMovements  camera;
+    [SerializeField] private new Controller.CameraMovements  camera;
     [SerializeField] private PlayerCollisionDetection  playerScript;
 
     [Header("GameObjects and Transform needed:")]
@@ -45,7 +45,7 @@ public class PlayerRespawn : MonoBehaviour
             sf_player.GetComponent<Transform>().position = sf_start.position;
             sf_player.SetActive(true);
             camera.setShouldMove(true);
-            camera.increaseSpeedCamera = camera.increaseSpeedCameraBuff;
+            camera.speedCamera = camera.SpeedCameraBuff;
             playerScript.setDead(false);
         }
 
@@ -55,7 +55,7 @@ public class PlayerRespawn : MonoBehaviour
         if(startDelay>0)
             startDelay--;
 
-        if(respawnDelay > 0 && !sf_player.active){
+        if(respawnDelay > 0 && !sf_player.activeInHierarchy){
             respawnDelay--;
         }
       
