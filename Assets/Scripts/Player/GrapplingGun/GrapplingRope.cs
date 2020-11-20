@@ -37,7 +37,7 @@ public class GrapplingRope : MonoBehaviour
         m_lineRenderer.enabled = true;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         m_lineRenderer.enabled = false;
         isGrappling = false;
@@ -52,6 +52,7 @@ public class GrapplingRope : MonoBehaviour
 
     private void Update()
     {
+
         moveTime += Time.deltaTime;
         DrawRope();
     }

@@ -372,6 +372,22 @@ Transform:
   m_Father: {fileID: 1414526646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480026961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1681481336379306170, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+  m_PrefabInstance: {fileID: 1681481336870348425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe086b471b8d324d953f56939234a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &491879270 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2196673084198817985, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
+  m_PrefabInstance: {fileID: 558787215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &525471521
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +504,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2196673084198817985, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196673084198817985, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2196673085381150265, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 133.5
@@ -499,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 2196673085462572348, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: sf_player
       value: 
-      objectReference: {fileID: 1414526646}
+      objectReference: {fileID: 1414526640}
     - target: {fileID: 2196673085462572348, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: sf_text
       value: 
@@ -921,6 +945,7 @@ GameObject:
   - component: {fileID: 1324641787}
   - component: {fileID: 1324641788}
   - component: {fileID: 1324641789}
+  - component: {fileID: 1324641790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1062,6 +1087,27 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1324641790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324641783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2999cc2ed4d720a47a359032660a4bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sf_player: {fileID: 1414526640}
+  sf_playerRope: {fileID: 480026961}
+  sf_camera: {fileID: 1324641786}
+  sf_start: {fileID: 491879270}
+  respawnDelay: 40
+  startDelay: 0
+  startOffset: 5
+  numberOfRespawnMax: 5
+  tagToRespawn: canBeDestroyed
 --- !u!1 &1414526640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681481335464841273, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
