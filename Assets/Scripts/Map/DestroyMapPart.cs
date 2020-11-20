@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public class DestroyMapPart : MonoBehaviour
+namespace Map
 {
-
-    // Lorsque une partie de la map sort de le camera
-    void OnBecameInvisible()
+    public class DestroyMapPart : MonoBehaviour
     {
-        //Supprime le gameObject
-        Destroy (gameObject);
-        //Supprime l'isntance du script utilisé
-        Destroy(this);
+
+        // Lorsque une partie de la map sort de le camera
+        void OnBecameInvisible()
+        {
+            //Supprime le gameObject
+            Destroy (gameObject);
+            //Supprime l'isntance du script utilisé
+            Destroy(this);
+        }
     }
 }

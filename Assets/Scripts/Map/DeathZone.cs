@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public class DeathZone : MonoBehaviour
+namespace Map
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    public class DeathZone : MonoBehaviour
     {
-        // Verifie que l'objet entrant en collision est bien le joueur
-        if (other.gameObject.CompareTag("Player"))
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            //Destroy(other.gameObject);
-            Debug.Log("Destruction du joueur");
+            // Verifie que l'objet entrant en collision est bien le joueur
+            if (other.gameObject.CompareTag("Player"))
+            {
+                //Destroy(other.gameObject);
+                Debug.Log("Destruction du joueur");
+            }
         }
     }
 }
