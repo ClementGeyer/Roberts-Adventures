@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +10,8 @@ public class PlayerDash : MonoBehaviour
 
     [Header("Raycast2D origin")]
     [SerializeField] private Transform firePoint;
+    
     [SerializeField] private int maxDistance;
-    [SerializeField] private string tagOfKillingWalls;
 
     [Header("Values to change which affect the Dash")]
     [SerializeField] private float sf_dashSpeed;
@@ -22,7 +22,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private ParticleSystem  DashParticules;
     [SerializeField] private float distanceMinToBeDestroyed;
   
-    private bool canJump;
+    [HideInInspector] public bool canJump;
     private int dashCoolDownBuffer;
 
     private Vector2 buffVelocity ;
@@ -39,31 +39,8 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate()
     { 
         dash();
-        deadDetection();
         buffVelocity = sf_playerRB.velocity;
 
-    }
-
-
-    /*Cette fonction commme son nom l'indique, va détecter si le joueur doit mourir.
-    Il doit mourir si : il touche un objet destructible et qu'il ne dash pas*/
-    void deadDetection(){
-
-        /*On fait un raycast pour savoir si il touche quelque chose*
-            Si oui on regarde son tag et si il correspond, alors on explose le joeuur et on fait apparaitre des particules*/
-
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position,sf_playerRB.velocity, distanceMinToBeDestroyed);
-    
-        if(hit && hit.transform.gameObject.tag == tagOfKillingWalls && canJump ){
-            Instantiate(DeadParticules, this.transform.position, Quaternion.identity);
-            killPlayer();
-        }
-
-    }
-
-    void killPlayer(){
-        this.gameObject.SetActive(false);
-        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().grapplePoint = new Vector2(this.transform.position.x,this.transform.position.y);
     }
 
     void dash(){
