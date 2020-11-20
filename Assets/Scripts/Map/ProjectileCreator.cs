@@ -18,7 +18,7 @@ public class ProjectileCreator : MonoBehaviour
             
             for (int i = 0; i < yPositionProjectiles.Length; i++)
             {
-                Instantiate(projectile, position + new Vector3(200, yPositionProjectiles[i], 0), Quaternion.identity);
+                Instantiate(projectile, position + new Vector3(50, yPositionProjectiles[i], 0), Quaternion.identity);
             }
             
             spawned = true;
