@@ -6,6 +6,7 @@ TagManager:
   tags:
   - canBeDestroyed
   - grappable
+  - canKillPlayer
   layers:
   - Default
   - TransparentFX
