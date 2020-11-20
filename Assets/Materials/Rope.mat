@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   version: 2
 --- !u!21 &2100000
 Material:
@@ -84,26 +84,8 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - _BaseColor: {r: 0.31426364, g: 0.8056849, b: 0.7828182, a: 1}
+    - _BaseColor: {r: 0.47915393, g: 0.6055531, b: 0.6544807, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.31426364, g: 0.8056849, b: 0.7828182, a: 1}
-=======
-    - _BaseColor: {r: 0.35707217, g: 0.6317502, b: 0.16699493, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.35707217, g: 0.6317502, b: 0.16699493, a: 1}
->>>>>>> 876447f30b94e757912b3f7078dfc2d2ba55fbc1
-=======
-    - _BaseColor: {r: 0.93444955, g: 0.12725723, b: 0.46046406, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.93444955, g: 0.12725723, b: 0.46046406, a: 1}
->>>>>>> 09cbbef0c06c846643d55767d0e42e5338ffa6c1
-=======
-    - _BaseColor: {r: 0.5836305, g: 0.7518805, b: 0.2046876, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.5836305, g: 0.7518805, b: 0.2046876, a: 1}
->>>>>>> 703f06f4aaa3502bce4e9c31b372bcde13522820
+    - _EmissionColor: {r: 0.47915393, g: 0.6055531, b: 0.6544807, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
