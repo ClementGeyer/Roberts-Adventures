@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class ProjectileMovement : MonoBehaviour
     void Update()
     {
         // Déplace le projectile de -0.2 sur l'axe x
-        transform.position += new Vector3(-0.2f, 0, 0);
+        transform.position += new Vector3(-0.02f, 0, 0);
     }
     
     private void OnTriggerEnter2D(Collider2D other)

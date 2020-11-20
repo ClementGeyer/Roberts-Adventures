@@ -59,41 +59,43 @@ public class PlayerDash : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position,sf_playerRB.velocity, distanceMinToBeDestroyed);
     
-        if(hit.transform.gameObject.tag == tagOfKillingWalls && canJump ){
-        
+        if(hit && hit.transform.gameObject.tag == tagOfKillingWalls && canJump ){
             Instantiate(DeadParticules, this.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            this.gameObject.active = false;
         }
 
     }
 
     void dash(){
-        // Permet de récupérer la position de la souris dans la scène
-        var worldMousePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z));
-        
-        dashCoolDownBuffer--;
+        if(sf_playerRB != null && firePoint != null ){
+            // Permet de récupérer la position de la souris dans la scène
+            var worldMousePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z));
+            
+            dashCoolDownBuffer--;
 
-        if(dashCoolDownBuffer < 0 && !canJump){
-            dashCoolDownBuffer = sf_dashCooldown;
-            canJump = true;
-        }
-
-        if(Input.GetAxis("Jump") != 0 && canJump)
-        {
-            // Direction du dash calculée en fonction de la position de la souris et du personnage
-            var direction = worldMousePosition - this.transform.position;
-            direction.Normalize();
-            DashParticules.Play();
-
-            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity);
-            if(hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
-                Destroy(hit.transform.gameObject);
+            if(dashCoolDownBuffer < 0 && !canJump){
+                dashCoolDownBuffer = sf_dashCooldown;
+                canJump = true;
             }
 
-            canJump = false;
-            sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
-            dashCoolDownBuffer = sf_dashCooldown;
+            if(Input.GetAxis("Jump") != 0 && canJump)
+            {
+                // Direction du dash calculée en fonction de la position de la souris et du personnage
+                var direction = worldMousePosition - this.transform.position;
+                direction.Normalize();
+                
+                RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity, maxDistance);
+                if(hit && hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
+                  hit.transform.gameObject.active = false;
+                }
+
+                canJump = false;
+                sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
+                DashParticules.Play();
+                dashCoolDownBuffer = sf_dashCooldown;
+            }
         }
+    
     }
   
 }

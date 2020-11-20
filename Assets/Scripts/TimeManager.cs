@@ -24,10 +24,10 @@ public class TimeManager : MonoBehaviour
     
     // ---- SlowMotion
     // Intensité du ralentissement
-    public float slowdownFactor = 0.1f;
+    public float slowdownFactor;
     
     // Durée du ralentissement
-    public float slowdownLength = 12f;
+    public float slowdownLength;
     // ----
     
     private void Awake()
@@ -49,6 +49,9 @@ public class TimeManager : MonoBehaviour
 
         // Permet de ne pas accélerer le temps plus que la valeur normale
         Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
+        
+        Time.fixedDeltaTime += (1f / slowdownLength) * 0.00005f;
+        Time.fixedDeltaTime = Mathf.Clamp(Time.fixedDeltaTime, 0f, 0.02f);
     }
     
     // Crée un effet de ralentissement
