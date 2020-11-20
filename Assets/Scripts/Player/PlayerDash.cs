@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -53,8 +53,10 @@ public class PlayerDash : MonoBehaviour
             Si oui on regarde son tag et si il correspond, alors on explose le joeuur et on fait apparaitre des particules*/
 
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position,sf_playerRB.velocity, distanceMinToBeDestroyed);
+        RaycastHit2D hitRight = Physics2D.Raycast(firePoint.position,new Vector3(1,0,0), distanceMinToBeDestroyed);
     
-        if(hit && hit.transform.gameObject.tag == tagOfKillingWalls && canJump ){
+        if((hit && hit.transform.gameObject.tag == tagOfKillingWalls && canJump )
+        ||  hitRight && hitRight.transform.gameObject.tag == tagOfKillingWalls && canJump){
             Instantiate(DeadParticules, this.transform.position, Quaternion.identity);
             killPlayer();
         }
@@ -62,8 +64,11 @@ public class PlayerDash : MonoBehaviour
     }
 
     void killPlayer(){
+        //Permet de rendre le player inactif et de reset la corde (correction d'un bug)
         this.gameObject.SetActive(false);
-        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().grapplePoint = new Vector2(this.transform.position.x,this.transform.position.y);
+        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().grappleRope.enabled = false;
+        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().m_springJoint2D.enabled = false;
+        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().m_rigidbody.gravityScale = 1;
     }
 
     void dash(){
