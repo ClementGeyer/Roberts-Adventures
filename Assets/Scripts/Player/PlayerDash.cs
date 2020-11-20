@@ -10,8 +10,8 @@ public class PlayerDash : MonoBehaviour
 
     [Header("Raycast2D origin")]
     [SerializeField] private Transform firePoint;
+    
     [SerializeField] private int maxDistance;
-    [SerializeField] private string tagOfKillingWalls;
 
     [Header("Values to change which affect the Dash")]
     [SerializeField] private float sf_dashSpeed;
@@ -22,7 +22,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private ParticleSystem  DashParticules;
     [SerializeField] private float distanceMinToBeDestroyed;
   
-    private bool canJump;
+    [HideInInspector] public bool canJump;
     private int dashCoolDownBuffer;
 
     private Vector2 buffVelocity ;
@@ -39,7 +39,6 @@ public class PlayerDash : MonoBehaviour
     void FixedUpdate()
     { 
         dash();
-        deadDetection();
         buffVelocity = sf_playerRB.velocity;
 
     }
