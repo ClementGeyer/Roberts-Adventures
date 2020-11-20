@@ -43,33 +43,6 @@ public class PlayerDash : MonoBehaviour
 
     }
 
-
-    /*Cette fonction commme son nom l'indique, va détecter si le joueur doit mourir.
-    Il doit mourir si : il touche un objet destructible et qu'il ne dash pas*/
-    void deadDetection(){
-
-        /*On fait un raycast pour savoir si il touche quelque chose*
-            Si oui on regarde son tag et si il correspond, alors on explose le joeuur et on fait apparaitre des particules*/
-
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.position,sf_playerRB.velocity, distanceMinToBeDestroyed);
-        RaycastHit2D hitRight = Physics2D.Raycast(firePoint.position,new Vector3(1,0,0), distanceMinToBeDestroyed);
-    
-        if((hit && hit.transform.gameObject.tag == tagOfKillingWalls && canJump )
-        ||  hitRight && hitRight.transform.gameObject.tag == tagOfKillingWalls && canJump){
-            Instantiate(DeadParticules, this.transform.position, Quaternion.identity);
-            killPlayer();
-        }
-
-    }
-
-    void killPlayer(){
-        //Permet de rendre le player inactif et de reset la corde (correction d'un bug)
-        this.gameObject.SetActive(false);
-        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().grappleRope.enabled = false;
-        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().m_springJoint2D.enabled = false;
-        this.transform.Find("GunPivot/GrapplinGun").gameObject.GetComponent<GrapplingGun>().m_rigidbody.gravityScale = 1;
-    }
-
     void dash(){
         if(sf_playerRB != null && firePoint != null ){
             // Permet de récupérer la position de la souris dans la scène

@@ -12,7 +12,12 @@
             <e p="SlowMotionBonus.cs" t="Include" />
           </e>
           <e p="CameraMovements.cs" t="Include" />
-          <e p="GameController.cs" t="Include" />
+          <e p="Controller" t="Include">
+            <e p="CameraMovements.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
+            <e p="SpawnObjects.cs" t="Include" />
+            <e p="TimeManager.cs" t="Include" />
+          </e>
           <e p="HUD" t="Include">
             <e p="Progression.cs" t="Include" />
           </e>
@@ -22,7 +27,10 @@
             <e p="MovingObstacle.cs" t="Include" />
             <e p="ProjectileCreator.cs" t="Include" />
             <e p="ProjectileMovement.cs" t="Include" />
-            <e p="RotateWheel.cs" t="Include" />
+            <e p="Projectiles" t="Include">
+              <e p="ProjectileCreator.cs" t="Include" />
+              <e p="ProjectileMovement.cs" t="Include" />
+            </e>
           </e>
           <e p="Menu" t="Include">
             <e p="ButtonGrow.cs" t="Include" />
@@ -41,10 +49,11 @@
             </e>
             <e p="JellyMesh.cs" t="Include" />
             <e p="Movements.cs" t="Include" />
+            <e p="PlayerCollisionDetection.cs" t="Include" />
             <e p="PlayerDash.cs" t="Include" />
+            <e p="PlayerDetection.cs" t="Include" />
+            <e p="PlayerRespawn.cs" t="Include" />
           </e>
-          <e p="SpawnObjects.cs" t="Include" />
-          <e p="TimeManager.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

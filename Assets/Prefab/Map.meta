@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/Level01 1.unity.meta
+guid: 7d21fd56daef6de4387a7727d59aaca2
+=======
 guid: f82dc16e27b73414b9e9d519028be3cd
 folderAsset: yes
+>>>>>>> 876447f30b94e757912b3f7078dfc2d2ba55fbc1:Assets/Prefab/Map.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

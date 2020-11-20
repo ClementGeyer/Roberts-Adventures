@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0e0c52df7baec498e150c1d5c2f8ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Options: {fileID: 0}
   PauseMenuUI: {fileID: 6998254348044818903}
 --- !u!1 &6998254347312305384
 GameObject:
@@ -471,7 +470,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2167936890010988126}
-          m_TargetAssemblyTypeName: TextGrow, Assembly-CSharp
+          m_TargetAssemblyTypeName: Menu.TextGrow, Assembly-CSharp
           m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
