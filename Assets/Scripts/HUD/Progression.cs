@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class Progression : MonoBehaviour
 {
 
@@ -12,7 +11,7 @@ public class Progression : MonoBehaviour
     [SerializeField] private Transform sf_finish;
     [Header("Transform of the player:")]
     [SerializeField] private GameObject sf_player;
-   
+
 
 
     // Start is called before the first frame update
@@ -27,15 +26,16 @@ public class Progression : MonoBehaviour
 
         if(sf_player != null){
             float length = (sf_finish.position.x - sf_start.position.x);
-            int posPlayer = (int)((sf_player.GetComponent<Transform>().position.x/ length ) * 100);
+            float posPlayer = sf_player.GetComponent<Transform>().position.x/ length * 100;
 
             if(posPlayer < 0 )
                 posPlayer = 0;
             else if(posPlayer > 100)
                 posPlayer = 100;
 
-            sf_text.text =  posPlayer + " %";
+            sf_text.text =  (int)posPlayer + " %";
+            ProgressBar.instance.IncrementProgress(posPlayer/100);
         }
-            
+
     }
 }
