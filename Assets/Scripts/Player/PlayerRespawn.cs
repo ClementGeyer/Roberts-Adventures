@@ -13,6 +13,10 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Transform sf_camera;
     [SerializeField] private Transform sf_start;
 
+    [Header("Canvas questions")]
+    [SerializeField] private GameObject sf_canvas;
+    [SerializeField] private JsonExtractor sf_script;
+
     [Header("Other Parameters")]
     [SerializeField] private int respawnDelay;
     [SerializeField] private int startDelay;
@@ -33,21 +37,35 @@ public class PlayerRespawn : MonoBehaviour
     void Update()
     {
         //Si le joueur est mort
-        if(!sf_player.activeSelf && currentNbRespawn < numberOfRespawnMax && startDelay <= 0 && respawnDelay<=0){
-            respawnDelay = RepsawnDelayBuffer;
-            currentNbRespawn++;
-             
-            foreach(GameObject respawn in goToRespawn)
-                if(!respawn.activeSelf)
-                    respawn.SetActive(true);
+        if(!sf_player.activeSelf){
+            sf_canvas.SetActive(true);
 
-            sf_camera.position = new Vector3(sf_start.position.x + startOffset,sf_camera.position.y, sf_camera.position.z) ;
-            sf_player.GetComponent<Transform>().position = sf_start.position;
-            sf_player.SetActive(true);
-            camera.setShouldMove(true);
-            camera.speedCamera = camera.SpeedCameraBuff;
-            playerScript.setDead(false);
+            if(sf_script.userFindTrueRep() == 1){
+                sf_canvas.SetActive(false);
+                sf_player.SetActive(true);
+                sf_script.DieQuestion();
+            }
+            else if(sf_script.userFindTrueRep() == -1){
+                if(!sf_player.activeSelf && currentNbRespawn < numberOfRespawnMax && startDelay <= 0 && respawnDelay<=0){
+                    respawnDelay = RepsawnDelayBuffer;
+                    currentNbRespawn++;
+                    
+                    foreach(GameObject respawn in goToRespawn)
+                        if(!respawn.activeSelf)
+                            respawn.SetActive(true);
+
+                    sf_camera.position = new Vector3(sf_start.position.x + startOffset,sf_camera.position.y, sf_camera.position.z) ;
+                    sf_player.GetComponent<Transform>().position = sf_start.position;
+                    sf_canvas.SetActive(false);
+                    sf_player.SetActive(true);
+                    camera.setShouldMove(true);
+                    camera.speedCamera = camera.SpeedCameraBuff;
+                    playerScript.setDead(false);
+                    sf_script.DieQuestion();
+                }
+            }
         }
+
 
     }
     void FixedUpdate()
