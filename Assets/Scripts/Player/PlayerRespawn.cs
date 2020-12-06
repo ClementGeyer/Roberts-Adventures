@@ -24,11 +24,15 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private int numberOfRespawnMax;
     [SerializeField] private string tagToRespawn;
 
-    private GameObject[] goToRespawn;
+    private bool levelEnded;
+   
     private int currentNbRespawn;
     private int RepsawnDelayBuffer;
+    private GameObject[] goToRespawn;
+
     void Start()
     {
+         levelEnded = false;
          goToRespawn = GameObject.FindGameObjectsWithTag(tagToRespawn);
          RepsawnDelayBuffer = respawnDelay;
     }
@@ -37,7 +41,7 @@ public class PlayerRespawn : MonoBehaviour
     void Update()
     {
         //Si le joueur est mort
-        if(!sf_player.activeSelf){
+        if(!sf_player.activeSelf && !levelEnded){
             sf_canvas.SetActive(true);
 
             if(sf_script.userFindTrueRep() == 1){
@@ -66,6 +70,9 @@ public class PlayerRespawn : MonoBehaviour
             }
         }
 
+        if(levelEnded){
+            //todo make spawn finish stuff
+        }
 
     }
     void FixedUpdate()
@@ -77,5 +84,9 @@ public class PlayerRespawn : MonoBehaviour
             respawnDelay--;
         }
       
+    }
+
+    void EndLevel(){
+         levelEnded = true;
     }
 }

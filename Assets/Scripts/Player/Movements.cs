@@ -24,10 +24,11 @@ namespace Player
         void FixedUpdate()
         {
             if(rb.velocity.x > v2.x * speedMax || -rb.velocity.x < v2.x * -speedMax
-                                               || rb.velocity.y > v2.y * speedMax || -rb.velocity.y < v2.y * -speedMax){
+            || rb.velocity.y > v2.y * speedMax || -rb.velocity.y < v2.y * -speedMax){
                 rb.velocity *= vDrag;
             }
         }
+
     
         // Lorsque le joueur sort de le camera
         void OnBecameInvisible () 
