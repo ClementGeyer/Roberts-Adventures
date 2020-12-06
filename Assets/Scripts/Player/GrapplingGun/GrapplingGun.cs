@@ -59,6 +59,7 @@ public class GrapplingGun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             SetGrapplePoint();
+            
         }
         else if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -113,6 +114,7 @@ public class GrapplingGun : MonoBehaviour
             grapplePoint = _hit.point;
             grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
             grappleRope.enabled = true;
+            playGrappleSound();
         }
 
     }
@@ -164,6 +166,10 @@ public class GrapplingGun : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(firePoint.position, maxDistance);
         }
+    }
+
+    private void playGrappleSound(){
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
 
 }

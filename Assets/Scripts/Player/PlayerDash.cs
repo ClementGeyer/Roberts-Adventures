@@ -69,10 +69,15 @@ public class PlayerDash : MonoBehaviour
                 canJump = false;
                 sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
                 DashParticules.Play();
+                playDashSound();
                 dashCoolDownBuffer = sf_dashCooldown;
             }
         }
     
+    }
+    
+    private void playDashSound(){
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
   
 }

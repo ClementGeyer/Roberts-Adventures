@@ -19,6 +19,7 @@ public class GrapplingRope : MonoBehaviour
     public AnimationCurve ropeProgressionCurve;
     [SerializeField] [Range(1, 50)] private float ropeProgressionSpeed = 1;
 
+
     float moveTime = 0;
 
     [HideInInspector] public bool isGrappling = true;
@@ -57,14 +58,21 @@ public class GrapplingRope : MonoBehaviour
         DrawRope();
     }
 
+    private void playRopeSound(){
+        this.gameObject.GetComponent<AudioSource>().Play();
+    }
+
     void DrawRope()
     {
         if (!straightLine)
         {
             if (m_lineRenderer.GetPosition(precision - 1).x == grapplingGun.grapplePoint.x)
                 straightLine = true;
-            else
+            else{
+                playRopeSound();
                 DrawRopeWaves();
+            }
+                
         }
         else
         {

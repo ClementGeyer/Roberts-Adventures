@@ -1553,7 +1553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335464841275, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Distance
-      value: 1.2015456
+      value: 23.114204
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335464841276, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Sprite
@@ -1658,6 +1658,14 @@ PrefabInstance:
     - target: {fileID: 1681481335894037327, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: launchSpeed
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920615467654997557, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920615467654997557, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
