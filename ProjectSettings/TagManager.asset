@@ -7,6 +7,10 @@ TagManager:
   - canBeDestroyed
   - grappable
   - canKillPlayer
+  - ProgressInfoToHide
+  - bonusToHide
+  - effectsToHide
+  - movingObstacleToHide
   layers:
   - Default
   - TransparentFX

@@ -648,6 +648,7 @@ MonoBehaviour:
   sf_start: {fileID: 875008931}
   sf_finish: {fileID: 1633605259}
   sf_player: {fileID: 940878955}
+  sf_particles: {fileID: 2085128898}
 --- !u!4 &69684708
 Transform:
   m_ObjectHideFlags: 0
@@ -1180,12 +1181,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183209539}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 704.08966, y: 388.18555, z: -411.87595}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 193.58966, y: 155.68555, z: -411.87595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1161441943}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &183209542
 MonoBehaviour:
@@ -2039,7 +2040,7 @@ Transform:
   - {fileID: 1982594039}
   - {fileID: 1360705460}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &418771019
 PrefabInstance:
@@ -3413,7 +3414,7 @@ GameObject:
   - component: {fileID: 809188930}
   m_Layer: 5
   m_Name: ProgressionText
-  m_TagString: Untagged
+  m_TagString: ProgressInfoToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3741,7 +3742,7 @@ Transform:
   - {fileID: 1331386909}
   - {fileID: 391692688}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &869183534
 GameObject:
@@ -4797,7 +4798,7 @@ GameObject:
   - component: {fileID: 1127391000}
   m_Layer: 5
   m_Name: Progress Bar
-  m_TagString: Untagged
+  m_TagString: ProgressInfoToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4907,7 +4908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025210, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025211, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5048,6 +5049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b854345576d16ae438e17766b7842901, type: 3}
+--- !u!224 &1161441943 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6998254347188141165, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
+  m_PrefabInstance: {fileID: 1654052776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166377210
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,7 +5067,7 @@ GameObject:
   - component: {fileID: 1166377211}
   m_Layer: 5
   m_Name: TimeCounterText
-  m_TagString: Untagged
+  m_TagString: ProgressInfoToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6096,7 +6102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025210, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025211, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6968,7 +6974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025210, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025211, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7365,7 +7371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025210, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025211, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8065,7 +8071,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1776375991 stripped
 Transform:
@@ -8687,7 +8693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025210, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793336471466025211, guid: 1fc85a09ab3befe4ea8f1bcf28b0fbbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9295,7 +9301,7 @@ GameObject:
   - component: {fileID: 2085128900}
   m_Layer: 5
   m_Name: Progress Bar Particles
-  m_TagString: Untagged
+  m_TagString: effectsToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

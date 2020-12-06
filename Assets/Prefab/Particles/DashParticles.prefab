@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8483428955610536059}
   - component: {fileID: 7547614172950543116}
   m_Layer: 0
-  m_Name: DashParticules
-  m_TagString: Untagged
+  m_Name: DashParticles
+  m_TagString: effectsToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
