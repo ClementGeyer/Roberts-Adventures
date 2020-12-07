@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 168199024362071853}
   m_Layer: 0
   m_Name: deathZone
-  m_TagString: canBeDestroyed
+  m_TagString: canKillPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

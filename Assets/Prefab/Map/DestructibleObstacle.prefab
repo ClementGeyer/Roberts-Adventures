@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7327093950678612473, guid: b8c555b5d180cf347b06d587be34fe9b, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: canKillPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c555b5d180cf347b06d587be34fe9b, type: 3}
@@ -355,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7327093950678612473, guid: b8c555b5d180cf347b06d587be34fe9b, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: canKillPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c555b5d180cf347b06d587be34fe9b, type: 3}

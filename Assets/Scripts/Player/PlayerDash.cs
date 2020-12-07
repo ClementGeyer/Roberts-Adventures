@@ -15,7 +15,7 @@ public class PlayerDash : MonoBehaviour
 
     [Header("Values to change which affect the Dash")]
     [SerializeField] private float sf_dashSpeed;
-    [SerializeField] private int sf_dashCooldown;
+    [SerializeField] public int sf_dashCooldown;
     
     [Header("Particules")]
     [SerializeField] private ParticleSystem  DeadParticules;
@@ -69,10 +69,15 @@ public class PlayerDash : MonoBehaviour
                 canJump = false;
                 sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
                 DashParticules.Play();
+                playDashSound();
                 dashCoolDownBuffer = sf_dashCooldown;
             }
         }
     
+    }
+    
+    private void playDashSound(){
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
   
 }

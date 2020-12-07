@@ -108,3 +108,4 @@ MonoBehaviour:
   wayPoint: {fileID: 7793336470346329848}
   player: {fileID: 0}
   projectile: {fileID: 5601721523415022398, guid: 6bdc1c97b13560640a8cb7fd497acf5a, type: 3}
+  yPositionProjectiles: []
