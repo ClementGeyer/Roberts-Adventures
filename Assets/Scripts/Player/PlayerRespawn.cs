@@ -29,6 +29,7 @@ public class PlayerRespawn : MonoBehaviour
     private int currentNbRespawn;
     private int RepsawnDelayBuffer;
     private GameObject[] goToRespawn;
+    public Canvas endCanvas;
 
     void Start()
     {
@@ -70,8 +71,10 @@ public class PlayerRespawn : MonoBehaviour
             }
         }
 
-        if(levelEnded){
-            //todo make spawn finish stuff
+        if(levelEnded)
+        {
+            Time.timeScale = 0f;
+            endCanvas.enabled = true;
         }
 
     }
