@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using Map;
 using UnityEngine;
 
@@ -15,8 +15,6 @@ namespace Controller
             player = GameObject.FindWithTag("Player");
             // Provisoire
             BeginGame();
-            RemoveFlow();
-            RemoveSelfEfficiency();
         }
     
         // Démarre la partie
@@ -147,14 +145,11 @@ namespace Controller
         // Désactive la mort du joueur par la collision avec les obstacles
         private void DisableKillObstacles()
         {
-            // Récupère tous les obstacles pouvant tuer le joueur
-            GameObject[] killObstacles = GameObject.FindGameObjectsWithTag("canKillPlayer");
-
-            foreach (var obstacle in killObstacles)
-            {
-                // Désactive chaque obstacle
-                obstacle.GetComponent<DeathZone>().enabled = false;
-            }
+            // Récupère le gameController contenant le script à désactiver
+            GameObject gameController = GameObject.Find("GameController");
+            
+            // Désactive le script
+            gameController.GetComponent<PlayerCollisionDetection>().enabled = false;
         }
         
         //Désactive l'accélération la caméra
@@ -239,14 +234,11 @@ namespace Controller
         // Désactive la mort du joueur par la collision avec les obstacles
         private void EnableKillObstacles()
         {
-            // Récupère tous les obstacles pouvant tuer le joueur
-            GameObject[] killObstacles = GameObject.FindGameObjectsWithTag("canKillPlayer");
-
-            foreach (var obstacle in killObstacles)
-            {
-                // Désactive chaque obstacle
-                obstacle.GetComponent<DeathZone>().enabled = true;
-            }
+            // Récupère le gameController contenant le script à désactiver
+            GameObject gameController = GameObject.Find("GameController");
+            
+            // Active le script
+            gameController.GetComponent<PlayerCollisionDetection>().enabled = true;
         }
         
         //Désactive l'accélération la caméra
