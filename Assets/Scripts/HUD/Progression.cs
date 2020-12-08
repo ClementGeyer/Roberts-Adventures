@@ -23,7 +23,7 @@ public class Progression : MonoBehaviour
 
     void Start()
     {
-        sf_particles.SetActive(false);
+        sf_particles.SetActive(true);//false
         sf_text.text =  0 + " %";
         length = (sf_finish.position.x - sf_start.position.x);
     }
@@ -64,7 +64,7 @@ public class Progression : MonoBehaviour
     //Cette méthode permet d'afficher la progression du joueur
     void printProgression(){
 
-     //On regarde si le joueur n'est pas null ou désactivé
+        //On regarde si le joueur n'est pas null ou désactivé
         if(sf_player != null && sf_player.activeSelf){
 
             //On récupère la position en x de notre joueur vu que les niveaux sont exclusivement horizontaux
