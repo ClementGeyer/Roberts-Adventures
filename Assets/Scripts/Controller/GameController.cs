@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Map;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Controller
@@ -9,14 +11,30 @@ namespace Controller
         private GameObject player;
         private static bool flow = true;
         private static bool selfefficiency = true;
+        private static List<bool> flowElements = new List<bool>();
+        private static List<bool> selfefficiencyElements = new List<bool>();
         public void Start()
         {
+            InitialiseLists();
             // Récupère le joueur
             player = GameObject.FindWithTag("Player");
             // Provisoire
             BeginGame();
             RemoveFlow();
             RemoveSelfEfficiency();
+        }
+
+        private void InitialiseLists()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                flowElements.Add(true);
+            }
+            
+            for(int i=0;i<2;i++)
+            {
+                selfefficiencyElements.Add(true);
+            }
         }
     
         // Démarre la partie
@@ -27,19 +45,24 @@ namespace Controller
         }
 
         // Désactive le flow
-        public void DisableFlow()
-        {
-            flow = !flow;
-        }
+        public void DisableFlow() { flow = !flow; }
 
         // Désactive le sentiment d'auto-efficacité
-        public void DisableSelfEfficiency()
-        {
-            selfefficiency = !selfefficiency;
-        }
+        public void DisableSelfEfficiency() { selfefficiency = !selfefficiency; }
+        
+        public void SetDash() { flowElements[0] = !flowElements[0]; }
+        public void SetDashCooldown() { flowElements[1] = !flowElements[1]; }
+        public void SetKillObstacles() { flowElements[2] = !flowElements[2]; }
+        public void SetObstacleMovements() { flowElements[3] = !flowElements[3]; }
+        public void SetCameraAcceleration() { flowElements[4] = !flowElements[4]; }
+
+        public void SetBonuses() { selfefficiencyElements[0] = !selfefficiencyElements[0]; }
+        public void SetEffects() { selfefficiencyElements[1] = !selfefficiencyElements[1]; }
+        public void SetProgressionInfo() { selfefficiencyElements[2] = !selfefficiencyElements[2]; }
+
 
         // Enlève des éléments du jeu propres au flow selon le choix du joueur
-        public void RemoveFlow()
+        private void RemoveFlow()
         {
             if (!flow)
             {
@@ -49,16 +72,38 @@ namespace Controller
                 DisableKillObstacles();
                 DisableCameraAcceleration();
             }
+            else
+            {
+                if (!flowElements[0])
+                    DisableDash();
+                if (!flowElements[1])
+                    DisableDashCoolDown();
+                if (!flowElements[2])
+                    DisableMovementFromObstacles();
+                if (!flowElements[3])
+                    DisableKillObstacles();
+                if (!flowElements[4])
+                    DisableCameraAcceleration();
+            }
         }
 
         // Enlève des éléments du jeu propres au sentiment d'auto-efficacité selon le choix du joueur
-        public void RemoveSelfEfficiency()
+        private void RemoveSelfEfficiency()
         {
             if (!selfefficiency)
             {
                 DisableBonuses();
                 DisableEffects();
                 DisableProgressionInfo();
+            }
+            else
+            {
+                if (!selfefficiencyElements[0])
+                    DisableBonuses();
+                if (!selfefficiencyElements[1])
+                    DisableEffects();
+                if (!selfefficiencyElements[2])
+                    DisableProgressionInfo();
             }
         }
 
