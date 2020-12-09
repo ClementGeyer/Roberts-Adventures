@@ -29,7 +29,6 @@ namespace Player
             }
         }
 
-    
         // Lorsque le joueur sort de le camera
         void OnBecameInvisible () 
         {

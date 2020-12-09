@@ -19,15 +19,26 @@ public class GrapplingRope : MonoBehaviour
     public AnimationCurve ropeProgressionCurve;
     [SerializeField] [Range(1, 50)] private float ropeProgressionSpeed = 1;
 
+    [Header("Impact particules:")]
+    public GameObject impactParticles;
+
 
     float moveTime = 0;
 
-    [HideInInspector] public bool isGrappling = true;
+    [HideInInspector] public bool isGrappling = false;
 
     bool straightLine = true;
 
+
+    private void Start()
+    {
+        OnDisable();
+    }
+
     private void OnEnable()
     {
+        
+
         moveTime = 0;
         m_lineRenderer.positionCount = precision;
         waveSize = StartWaveSize;
@@ -48,18 +59,21 @@ public class GrapplingRope : MonoBehaviour
     {
         for (int i = 0; i < precision; i++)
             m_lineRenderer.SetPosition(i, grapplingGun.firePoint.position);
-
+  
     }
 
     private void Update()
     {
-
         moveTime += Time.deltaTime;
         DrawRope();
     }
 
     private void playRopeSound(){
         this.gameObject.GetComponent<AudioSource>().Play();
+    
+        impactParticles.GetComponent<Transform>().position = grapplingGun.grapplePoint;
+        impactParticles.GetComponent<ParticleSystem>().Play();
+        
     }
 
     void DrawRope()
@@ -103,6 +117,8 @@ public class GrapplingRope : MonoBehaviour
 
             m_lineRenderer.SetPosition(i, currentPosition);
         }
+
+       
     }
 
     void DrawRopeNoWaves()

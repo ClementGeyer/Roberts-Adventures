@@ -40,7 +40,8 @@ public class Progression : MonoBehaviour
     void endAnimation(){
         //Si on a passé la fin
         if(posPlayer >= 99.5){
-
+            
+            sf_particles.GetComponent<ParticleSystem>().Play();
             //On récupère le grapplinGun 
             playerChild = sf_player.GetComponent<Transform>().GetChild(0).gameObject;
 
@@ -84,12 +85,12 @@ public class Progression : MonoBehaviour
             else {
                 //Si il est à la fin, alors on lance l'animation de fin
                 posPlayer = 100;
-                sf_particles.SetActive(true);
+                //sf_particles.SetActive(true);
             }
             
             //On applique le résultat obtenu dans le texte de progression
             sf_text.text =  (int)posPlayer + " %";
-            ProgressBar.instance.IncrementProgress(posPlayer/100);
+            //ProgressBar.instance.IncrementProgress(posPlayer/100);
         }
     }
 }

@@ -12,6 +12,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private Transform firePoint;
     
     [SerializeField] private int maxDistance;
+    [SerializeField] private int maxDistanceDashInput;
 
     [Header("Values to change which affect the Dash")]
     [SerializeField] private float sf_dashSpeed;
@@ -22,8 +23,12 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private ParticleSystem  DashParticules;
     [SerializeField] private float distanceMinToBeDestroyed;
   
+    [Header("UI Text")]
+    [SerializeField] private GameObject  sf_DashText;
+
     [HideInInspector] public bool canJump;
     private int dashCoolDownBuffer;
+    private bool dashUI;
 
     private Vector2 buffVelocity ;
 
@@ -32,6 +37,7 @@ public class PlayerDash : MonoBehaviour
     {
         
         canJump = false;
+        dashUI = false;
         dashCoolDownBuffer = sf_dashCooldown;
     }
 
@@ -55,6 +61,8 @@ public class PlayerDash : MonoBehaviour
                 canJump = true;
             }
 
+         
+
             if(Input.GetAxis("Jump") != 0 && canJump)
             {
                 // Direction du dash calculée en fonction de la position de la souris et du personnage
@@ -65,15 +73,31 @@ public class PlayerDash : MonoBehaviour
                 if(hit && hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
                   hit.transform.gameObject.SetActive(false);
                 }
-
                 canJump = false;
                 sf_playerRB.velocity += sf_dashSpeed * (Vector2)direction;
                 DashParticules.Play();
                 playDashSound();
                 dashCoolDownBuffer = sf_dashCooldown;
             }
+
+            printDash();
+
         }
     
+    }
+    
+    private void printDash()
+    {   
+            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity, maxDistanceDashInput);
+            if(hit && hit.transform.gameObject.tag == "canBeDestroyed"){
+                 dashUI = true;   
+            }
+            else{
+                dashUI = false;  
+            }
+             
+            sf_DashText.gameObject.SetActive(dashUI);
+
     }
     
     private void playDashSound(){
