@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿﻿﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Progression : MonoBehaviour
@@ -105,7 +105,7 @@ public class Progression : MonoBehaviour
             
             //On applique le résultat obtenu dans le texte de progression
             sf_text.text =  (int)posPlayer + " %";
-            //ProgressBar.instance.IncrementProgress(posPlayer/100);
+            ProgressBar.instance.IncrementProgress(posPlayer/100);
         }
     }
 }
