@@ -1,5 +1,7 @@
-﻿﻿using System;
+using System;
+using System.Collections.Generic;
 using Map;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Controller
@@ -7,20 +9,38 @@ namespace Controller
     public class GameController : MonoBehaviour
     {
         private GameObject player;
-        private static bool flow = true;
-        private static bool selfefficiency = true;
-        
-        /// <summary>
+        public static List<bool> flowElements = new List<bool>();
+        public static List<bool> selfefficiencyElements = new List<bool>();
+
+ 	    /// <summary>
         /// Démarre la partie et stocke le player présent dans la scène
         /// </summary>
+
         public void Start()
         {
+            InitialiseLists();
             // Récupère le joueur
             player = GameObject.FindWithTag("Player");
             // Provisoire
             BeginGame();
+            RemoveFlow();
+            RemoveSelfEfficiency();
         }
+
         
+        private void InitialiseLists()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                flowElements.Add(true);
+            }
+            
+            for(int i=0;i<3;i++)
+            {
+                selfefficiencyElements.Add(true);
+            }
+        }
+    
         /// <summary>
         /// Démarre la partie
         /// </summary>
@@ -29,29 +49,34 @@ namespace Controller
             // Lance le chronomètre
             TimeManager.instance.BeginTimer();
         }
-        
+
         /// <summary>
         /// Désactive le flow
         /// </summary>
-        public void DisableFlow()
-        {
-            flow = !flow;
-        }
-        
+        public void DisableFlow() { flowElements[0] = !flowElements[0]; }
+
         /// <summary>
         /// Désactive le sentiment d'auto-efficacité
         /// </summary>
-        public void DisableSelfEfficiency()
-        {
-            selfefficiency = !selfefficiency;
-        }
+        public void DisableSelfEfficiency() { selfefficiencyElements[0] = !selfefficiencyElements[0]; }
         
+        public void SetDash() { flowElements[1] = !flowElements[1]; }
+        public void SetDashCooldown() { flowElements[2] = !flowElements[2]; }
+        public void SetKillObstacles() { flowElements[3] = !flowElements[3]; }
+        public void SetObstacleMovements() { flowElements[4] = !flowElements[4]; }
+        public void SetCameraAcceleration() { flowElements[5] = !flowElements[5]; }
+
+        public void SetBonuses() { selfefficiencyElements[1] = !selfefficiencyElements[1]; }
+        public void SetEffects() { selfefficiencyElements[2] = !selfefficiencyElements[2]; }
+        public void SetProgressionInfo() { selfefficiencyElements[3] = !selfefficiencyElements[3]; }
+
+
         /// <summary>
         /// Enlève des éléments du jeu propres au flow selon le choix du joueur
         /// </summary>
-        public void RemoveFlow()
+        private void RemoveFlow()
         {
-            if (!flow)
+            if (!flowElements[0])
             {
                 DisableDash();
                 DisableDashCoolDown();
@@ -59,38 +84,59 @@ namespace Controller
                 DisableKillObstacles();
                 DisableCameraAcceleration();
             }
+            else
+            {
+                if (!flowElements[1])
+                    DisableDash();
+                else
+                    EnableDash(); 
+                if (!flowElements[2])
+                    DisableDashCoolDown();
+                else
+                    EnableDashCoolDown();
+                if (!flowElements[3])
+                    DisableMovementFromObstacles();
+                else
+                    EnableMovementFromObstacles();
+                if (!flowElements[4])
+                    DisableKillObstacles();
+                else
+                    EnableKillObstacles();
+                if (!flowElements[5])
+                    DisableCameraAcceleration();
+                else
+                    EnableCameraAcceleration();
+            }
         }
-        
+
         /// <summary>
         /// Enlève des éléments du jeu propres au sentiment d'auto-efficacité selon le choix du joueur
         /// </summary>
-        public void RemoveSelfEfficiency()
+        private void RemoveSelfEfficiency()
         {
-            if (!selfefficiency)
+            if (!selfefficiencyElements[0])
             {
                 DisableBonuses();
                 DisableEffects();
                 DisableProgressionInfo();
             }
+            else
+            {
+                if (!selfefficiencyElements[1])
+                    DisableBonuses();
+                else
+                    EnableBonuses();
+                if (!selfefficiencyElements[2])
+                    DisableEffects();
+                else
+                    EnableEffects();
+                if (!selfefficiencyElements[3])
+                    DisableProgressionInfo();
+                else
+                    EnableProgressionInfo();
+            }
         }
-        
-        /// <summary>
-        /// Réactive tous les élements du jeu
-        /// </summary>
-        public void EnableAll()
-        {
-            EnableDash();
-            EnableDashCoolDown();
-            EnableMovementFromObstacles();
-            EnableKillObstacles();
-            EnableCameraAcceleration();
-            EnableBonuses();
-            EnableEffects();
-            EnableProgressionInfo();
-            flow = true;
-            selfefficiency = true;
-        }
-        
+
         /// <summary>
         /// Désactive le dash
         /// </summary>
@@ -100,7 +146,7 @@ namespace Controller
             player.GetComponent<PlayerDash>().enabled = false;
         }
         
-        
+
         /// <summary>
         /// Supprime le délai d'attente avant de pouvoir réutiliser le dash
         /// </summary>
@@ -109,7 +155,7 @@ namespace Controller
             // Récupère la variable sf_dashCooldown représentant le délai d'attente entre chaque dash
             player.GetComponent<PlayerDash>().sf_dashCooldown = 0;
         }
-        
+
         /// <summary>
         /// Désactive les bonus
         /// </summary>
@@ -124,7 +170,7 @@ namespace Controller
                 bonus.SetActive(false);
             }
         }
-        
+
         /// <summary>
         /// Désactive les informations de progression, le temps, le pourcentage ainsi que la barre de progression.
         /// </summary>
@@ -169,17 +215,20 @@ namespace Controller
                 obstacle.GetComponent<MovingObstacle>().enabled = false;
             }
         }
-        
+
         /// <summary>
         /// Désactive la mort du joueur par la collision avec les obstacles
         /// </summary>
         private void DisableKillObstacles()
         {
-            // Récupère le gameController contenant le script à désactiver
-            GameObject gameController = GameObject.Find("GameController");
-            
-            // Désactive le script
-            gameController.GetComponent<PlayerCollisionDetection>().enabled = false;
+            // Récupère tous les obstacles pouvant tuer le joueur
+            GameObject[] killObstacles = GameObject.FindGameObjectsWithTag("canKillPlayer");
+
+            foreach (var obstacle in killObstacles)
+            {
+                // Désactive chaque obstacle
+                //obstacle.GetComponent<DeathZone>().enabled = false;
+            }
         }
         
         /// <summary>
@@ -206,7 +255,6 @@ namespace Controller
         }
         
 
-        
         /// <summary>
         /// Active le délai d'attente avant de pouvoir réutiliser le dash
         /// </summary>
@@ -215,7 +263,7 @@ namespace Controller
             // Récupère la variable sf_dashCooldown représentant le délai d'attente entre chaque dash
             player.GetComponent<PlayerDash>().sf_dashCooldown = 75;
         }
-        
+
         /// <summary>
         /// Active les bonus
         /// </summary>
@@ -230,7 +278,7 @@ namespace Controller
                 bonus.SetActive(true);
             }
         }
-        
+
         /// <summary>
         /// Active les informations de progression, le temps, le pourcentage ainsi que la barre de progression.
         /// </summary>
@@ -261,7 +309,6 @@ namespace Controller
             }
         }
         
-
         /// <summary>
         /// Active le déplacement vertical des GameObject "MovingObstacles"
         /// </summary>
@@ -276,19 +323,22 @@ namespace Controller
                 obstacle.GetComponent<MovingObstacle>().enabled = true;
             }
         }
-        
+
         /// <summary>
         /// Active la mort du joueur par la collision avec les obstacles
         /// </summary>
         private void EnableKillObstacles()
         {
-            // Récupère le gameController contenant le script à désactiver
-            GameObject gameController = GameObject.Find("GameController");
-            
-            // Active le script
-            gameController.GetComponent<PlayerCollisionDetection>().enabled = true;
-        }
+            // Récupère tous les obstacles pouvant tuer le joueur
+            GameObject[] killObstacles = GameObject.FindGameObjectsWithTag("canKillPlayer");
 
+            foreach (var obstacle in killObstacles)
+            {
+                // Désactive chaque obstacle
+                //obstacle.GetComponent<DeathZone>().enabled = true;
+            }
+        }
+        
         /// <summary>
         /// Active l'accélération la caméra
         /// </summary>

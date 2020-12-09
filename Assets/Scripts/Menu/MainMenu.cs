@@ -7,7 +7,7 @@ namespace Menu
     {
 
         public GameObject menu;
-    
+
         //Méthode qui permet de charger la scène de sélection de niveaux quand on appuie sur le bouton "Histoire"
         public void LoadLevelSelection()
         {

@@ -1,4 +1,5 @@
-﻿using Controller;
+using System;
+using Controller;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,13 +7,12 @@ namespace Menu
 {
     public class PauseMenu : MonoBehaviour
     {
-        public GameController gc;
         //Cet attribut définit si le menu pause est activé ou non
         public static bool GamePaused = false;
         //Cet attribut représente le pannel du menu pause
         public GameObject PauseMenuUI;
 
-        //La fonction start va désactiver le menu pause au démarrage du niveau
+
         private void Start()
         {
             PauseMenuUI.SetActive(false);
@@ -57,7 +57,6 @@ namespace Menu
         //Méthode permettant de quitter le niveau, on réactive aussi le temps sinon quand on relance le niveau le temps sera désactiver et les éléments du jeu
         public void QuitGame()
         {
-            gc.EnableAll();
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
         }
