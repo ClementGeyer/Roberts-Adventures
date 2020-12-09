@@ -7675,6 +7675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6998254347188141169, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
 --- !u!4 &1658389770 stripped
@@ -8059,6 +8063,7 @@ MonoBehaviour:
   startOffset: 0
   numberOfRespawnMax: 5
   tagToRespawn: canBeDestroyed
+  endCanvas: {fileID: 0}
 --- !u!4 &1741403818
 Transform:
   m_ObjectHideFlags: 0

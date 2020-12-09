@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Controller;
+﻿using Controller;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndCanvas : MonoBehaviour
 {
-    public GameController gc;
     public GameObject endMenuUI;
+    public GameObject playAgainMenuUI;
+
     public void NextLevel()
     {
         Time.timeScale = 1f;
@@ -25,4 +25,12 @@ public class EndCanvas : MonoBehaviour
         Time.timeScale = 0f;
         endMenuUI.SetActive(true);
     }
+
+    public void PlayAgain()
+    {
+        endMenuUI.SetActive(false);
+        playAgainMenuUI.SetActive(true);
+    }
+    
+    
 }

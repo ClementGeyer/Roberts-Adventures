@@ -9,7 +9,6 @@ namespace Menu
     public class LevelSelection : MonoBehaviour
     {
         //Cet attribut est le pannel du prefab "Options"
-        public GameController gc;
         public GameObject optionsMenu;
         public Toggle flow;
         public Toggle selfefficiency;
