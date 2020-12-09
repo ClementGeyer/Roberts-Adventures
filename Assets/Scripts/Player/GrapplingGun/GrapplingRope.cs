@@ -29,16 +29,20 @@ public class GrapplingRope : MonoBehaviour
 
     bool straightLine = true;
 
-
+    /// <summary>
+    /// Se lance une fois au début du script
+    /// </summary>
     private void Start()
     {
         OnDisable();
     }
 
+    /// <summary>
+    /// Permet d'enable la corde
+    /// </summary>
     private void OnEnable()
     {
-        
-
+        //On remet toutes las variables dans les valeurs par défaut
         moveTime = 0;
         m_lineRenderer.positionCount = precision;
         waveSize = StartWaveSize;
@@ -49,12 +53,18 @@ public class GrapplingRope : MonoBehaviour
         m_lineRenderer.enabled = true;
     }
 
+    /// <summary>
+    /// Permet de disable la corde
+    /// </summary>
     public void OnDisable()
     {
         m_lineRenderer.enabled = false;
         isGrappling = false;
     }
-
+    
+    /// <summary>
+    /// Set les points de la corde jusquà la cible
+    /// </summary>
     private void LinePointsToFirePoint()
     {
         for (int i = 0; i < precision; i++)
@@ -62,12 +72,18 @@ public class GrapplingRope : MonoBehaviour
   
     }
 
+    /// <summary>
+    /// Est appelée à toutes les frames
+    /// </summary>
     private void Update()
     {
         moveTime += Time.deltaTime;
         DrawRope();
     }
 
+    /// <summary>
+    /// Joue le son de la corde et crée un impact sur la cible
+    /// </summary>
     private void playRopeSound(){
         this.gameObject.GetComponent<AudioSource>().Play();
     
@@ -76,13 +92,19 @@ public class GrapplingRope : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Dessine la corde
+    /// </summary>
     void DrawRope()
-    {
+    {   
+        //Si la corde n'est pas droite
         if (!straightLine)
         {
+            //Si la position en X de la corde est le même que la position en X du point à accrocher
             if (m_lineRenderer.GetPosition(precision - 1).x == grapplingGun.grapplePoint.x)
                 straightLine = true;
             else{
+                //Joue les sons
                 playRopeSound();
                 DrawRopeWaves();
             }
@@ -90,37 +112,58 @@ public class GrapplingRope : MonoBehaviour
         }
         else
         {
+            //Si il n'est pas en train de grapple
             if (!isGrappling)
             {
+                //On appelle la méthode grapplingGun.Grapple();
                 grapplingGun.Grapple();
                 isGrappling = true;
             }
 
+            //Permet de set la wave size en focntion du temps
             waveSize = (waveSize > 0) ? waveSize -= Time.deltaTime * straightenLineSpeed : 0;
             m_lineRenderer.positionCount = precision ;
             DrawRopeWaves();
         }
     }
 
+    /// <summary>
+    /// Dessine le "Bruit" sur la corde
+    /// <remark>
+    /// Il faut que la line Renderer soit visible
+    /// </remark>
+    /// </summary>
     void DrawRopeWaves()
     {
-        Vector2 offset ;
-        Vector2 targetPosition ;
+        //On crée 3 vector de dimension 2.
+        Vector2 offset;
+        Vector2 targetPosition;
         Vector2 currentPosition;
 
         for (int i = 0; i < m_lineRenderer.positionCount; i++)
         {
+            //On calcule le delta 
             float delta = (float)i / ((float)precision - 1f);
+            //On prends le vecteur perpendiculaire et normalisé 
             offset = Vector2.Perpendicular(grapplingGun.grappleDistanceVector).normalized * ropeAnimationCurve.Evaluate(delta) * waveSize;
+            //Assigne le lerp pour set la position de la cible
             targetPosition = Vector2.Lerp(grapplingGun.firePoint.position, grapplingGun.grapplePoint, delta) + offset;
+            //Assigne le lerp pour la position courante dans la corde
             currentPosition = Vector2.Lerp(grapplingGun.firePoint.position, targetPosition, ropeProgressionCurve.Evaluate(moveTime) * ropeProgressionSpeed);
 
+            //Set la position du point sur la corde en focntion de nos calculs précédents
             m_lineRenderer.SetPosition(i, currentPosition);
         }
 
        
     }
 
+    /// <summary>
+    /// Dessine une corde sans bruit
+    /// <remark>
+    /// Il faut que la line Renderer soit visible
+    /// </remark>
+    /// </summary>
     void DrawRopeNoWaves()
     {
         m_lineRenderer.SetPosition(0, grapplingGun.firePoint.position);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class tricksDetector : MonoBehaviour
+public class TricksDetector : MonoBehaviour
 {
     [Header("Text for greetings")]
     [SerializeField]private GameObject greetingsText;
@@ -18,6 +18,10 @@ public class tricksDetector : MonoBehaviour
     float WindupRotation = 0;
     float bufferTimeToPrint = 0;
  
+
+    /// <summary>
+    /// Se lance une seule fois au début
+    /// </summary>
     void Start()
     {
         playerTransform = this.gameObject.GetComponent<Transform>();
@@ -26,23 +30,37 @@ public class tricksDetector : MonoBehaviour
         hasToPrint = false;
     }
 
+    /// <summary>
+    /// Se lance tout les 0.02 secondes (Basé sur le deltaTime)
+    /// </summary>
     private void FixedUpdate()
     {
+        //Si on doit l'afficher
         if(hasToPrint){
             timeToPrint--;
+            //Et que on a encore le temps pour l'afficher
             if(timeToPrint <= 0){
                 hasToPrint = false;
                 timeToPrint = bufferTimeToPrint;
             }
         }
     }
+
+    /// <summary>
+    /// Est appelé une fois par frame
+    /// </summary>
     void Update()
     {
+        //On crée un buffer
         int buffFlips = (int)flips;
+        //On regarde le nombre de flips
         detectTricks();
 
+        //Si le buffer est devenu différents
         if(buffFlips != (int)flips){
-            int idList = Random.Range(0, greetingsList.Count);
+            //On prends une valeur aléatoire
+            int idList = Random.Range(0, greetingsList.Count);  
+            //On set le texte sur une des valeurs de la liste
             greetingsText.GetComponent<TextMeshProUGUI>().text = greetingsList[idList];
             hasToPrint = true;
             currentRotation = 0;
@@ -56,6 +74,10 @@ public class tricksDetector : MonoBehaviour
         
     }
 
+
+    /// <summary>
+    /// Detecte si le joueur à fait un flip
+    /// </summary>
     void detectTricks(){
         
         deltaRotation = (currentRotation - playerTransform.eulerAngles.z);

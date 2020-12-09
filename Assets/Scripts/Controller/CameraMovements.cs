@@ -11,8 +11,6 @@ namespace Controller
         public bool shouldMove;
         [SerializeField] public float SpeedCameraBuff = 0.0f;
         public float maxspeed; 
-
-       
     
         public GameObject hero;
         private Transform tf;
@@ -30,6 +28,19 @@ namespace Controller
     
         void FixedUpdate()
         {
+          moveCamera();
+        }
+
+        /// <summary>Cette méthode permet de bouger la caméra en fonction du joueur et du temps qui passe
+        /// <example>Par exemple:
+        /// <code>
+        ///    Position playerPosition = new Point(3,5);
+        ///    Camera.Translate(playerPosition + acceleration);
+        /// </code>
+        ///     Cela permet de suivre le joueur tout en accelerant la caméra
+        /// </example>
+        /// </summary>
+        private void moveCamera(){
             if(shouldMove){
                 // Seuil de vitesse max
                 if(speedCamera <= maxspeed)

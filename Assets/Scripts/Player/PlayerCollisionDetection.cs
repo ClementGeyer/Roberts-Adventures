@@ -29,13 +29,19 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     private bool isDead;
 
-
+    /// <summary>
+    /// Met l'état joueur à la valeur du parametre 
+    /// </summary>
+    /// <param name="p_bool"> Boolean qui set la mort du personnage</param>
     public void setDead(bool p_bool){
         isDead = p_bool;
     }
 
-    /*Cette fonction commme son nom l'indique, va détecter si le joueur doit mourir.
-    Il doit mourir si : il touche un objet destructible et qu'il ne dash pas*/
+    
+    /// <summary>
+    /// Cette méthode commme son nom l'indique, va détecter si le joueur doit mourir.
+    /// Il doit mourir si : il touche un objet destructible et qu'il ne dash pas
+    /// </summary>
     void deadDetection(){
 
         /*On fait un raycast pour savoir si il touche quelque chose*
@@ -45,7 +51,9 @@ public class PlayerCollisionDetection : MonoBehaviour
         hitRight = Physics2D.Raycast(firePoint.position,new Vector3(1,0,0), distanceMinToBeDestroyed);
         hitBottom = Physics2D.Raycast(firePoint.position,Vector3.down, distanceMinToBeDestroyed);
         hitLeft = Physics2D.Raycast(firePoint.position,Vector3.left, distanceMinToBeDestroyed);
-    
+
+        
+
          foreach(string tag in tagsOfKillingWalls ){   
             if( (hit        && hit.transform.gameObject.tag       == tag )
             ||  (hitRight   && hitRight.transform.gameObject.tag  == tag ) 
@@ -55,13 +63,17 @@ public class PlayerCollisionDetection : MonoBehaviour
                 if(!isDead){
                     Instantiate(DeadParticules, player.GetComponent<Transform>().position, Quaternion.identity);
                 }
-               
+            
                 killPlayer();
-                camera.setShouldMove(false) ;
+                camera.setShouldMove(false);
              }
         }
     }
 
+
+    /// <summary>
+    /// Rend le joueur inactif 
+    /// </summary>
     public void killPlayer(){
         //Permet de rendre le player inactif et de reset la corde (correction d'un bug)
         player.SetActive(false);
@@ -71,7 +83,11 @@ public class PlayerCollisionDetection : MonoBehaviour
         
         isDead=true;
     }
-    // Update is called once per frame
+
+
+    /// <summary>
+    /// Se lance tout les 0.02 secondes (Basé sur le deltaTime)
+    /// </summary>
     void FixedUpdate()
     {
         deadDetection();
