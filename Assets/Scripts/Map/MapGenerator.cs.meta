@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Map/MapGenerator.cs.meta
+guid: 0bc4ff350cb8a734f8cb9117a7ce12fb
+=======
+guid: 8ead4cef67bf56b49aecc3f169569db6
+>>>>>>> 32e7391191330e78fafc4ac7061c9d7cce364cdd:Assets/Scripts/Player/tricksDetector.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

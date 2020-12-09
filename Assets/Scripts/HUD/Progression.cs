@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿﻿﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Progression : MonoBehaviour
@@ -21,26 +21,40 @@ public class Progression : MonoBehaviour
     private float length;
     private GameObject playerChild;
 
+
+    /// <summary>
+    /// Est appelé une fois au début
+    /// </summary>
     void Start()
     {
-        sf_particles.SetActive(false);
+        sf_particles.SetActive(true);//false
         sf_text.text =  0 + " %";
         length = (sf_finish.position.x - sf_start.position.x);
     }
 
+    /// <summary>
+    /// Est appelé à toutes les frames
+    /// </summary>
     void Update()
     {   
         printProgression();
     }
 
+    /// <summary>
+    /// Se lance tout les 0.02 secondes (Basé sur le deltaTime)
+    /// </summary>
     void FixedUpdate(){
         endAnimation();
     }
 
+    /// <summary>
+    /// Lance l'animation de fin
+    /// </summary>
     void endAnimation(){
         //Si on a passé la fin
         if(posPlayer >= 99.5){
-
+            
+            sf_particles.GetComponent<ParticleSystem>().Play();
             //On récupère le grapplinGun 
             playerChild = sf_player.GetComponent<Transform>().GetChild(0).gameObject;
 
@@ -61,10 +75,12 @@ public class Progression : MonoBehaviour
         }
     }
 
-    //Cette méthode permet d'afficher la progression du joueur
+    /// <summary>
+    /// Affiche la progression du joueur en %
+    /// </summary>
     void printProgression(){
 
-     //On regarde si le joueur n'est pas null ou désactivé
+        //On regarde si le joueur n'est pas null ou désactivé
         if(sf_player != null && sf_player.activeSelf){
 
             //On récupère la position en x de notre joueur vu que les niveaux sont exclusivement horizontaux
@@ -84,7 +100,7 @@ public class Progression : MonoBehaviour
             else {
                 //Si il est à la fin, alors on lance l'animation de fin
                 posPlayer = 100;
-                sf_particles.SetActive(true);
+                //sf_particles.SetActive(true);
             }
             
             //On applique le résultat obtenu dans le texte de progression

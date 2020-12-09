@@ -33,6 +33,9 @@ namespace Controller
         public float slowdownLength;
         // ----
     
+        /// <summary>
+        /// Initialise le singleton
+        /// </summary>
         private void Awake()
         {
             // Initialisation du singleton
@@ -42,6 +45,9 @@ namespace Controller
             }
         }
 
+        /// <summary>
+        /// Fait revenir le temps à la normale petit à petit
+        /// </summary>
         void Update()
         {
             //Si le jeu est en pause la commande n'est pas exécutée
@@ -56,8 +62,10 @@ namespace Controller
             Time.fixedDeltaTime += (1f / slowdownLength) * 0.00005f;
             Time.fixedDeltaTime = Mathf.Clamp(Time.fixedDeltaTime, 0f, 0.02f);
         }
-    
-        // Crée un effet de ralentissement
+        
+        /// <summary>
+        /// Crée un effet de ralentissement
+        /// </summary>
         public void DoSlowmotion()
         {
             // timeScale représente vitesse du temps qui passe, = 1 par défaut
@@ -66,22 +74,31 @@ namespace Controller
             Time.fixedDeltaTime = Time.timeScale * .02f;
         }
 
+        /// <summary>
+        /// Lance le chronomètre
+        /// </summary>
         public void BeginTimer()
         {
-            // Lance le chronomètre
             timerGoing = true;
             elapsedTime = 0f;
 
             StartCoroutine(UpdateTimer());
         }
 
+        /// <summary>
+        /// Stop le chronomètre
+        /// </summary>
         public void EndTimer()
         {
             // Arrête le timer
             timerGoing = false;
         }
-
-        // Une coroutine ne dépend pas des frames et continuera son execution même si l'on passe à la prochaine frame
+        
+        /// <summary>
+        /// Met à jour le timer
+        /// Une coroutine ne dépend pas des frames et continuera son execution même si l'on passe à la prochaine frame
+        /// </summary>
+        /// <returns>null</returns>
         private IEnumerator UpdateTimer()
         {
             while (timerGoing)

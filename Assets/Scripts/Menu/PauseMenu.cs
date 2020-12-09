@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Controller;
 using UnityEngine;
 using UnityEngine.SceneManagement;

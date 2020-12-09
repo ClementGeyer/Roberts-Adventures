@@ -8,6 +8,10 @@ public class ProgressBar : MonoBehaviour
     // unique instance de la classe
     public static ProgressBar instance;
     
+    /// <summary>
+    /// Appelé au démarrage du jeu
+    /// Instancie le singleton
+    /// </summary>
     void Awake(){
         // Singleton
         if (instance == null)
@@ -15,8 +19,11 @@ public class ProgressBar : MonoBehaviour
             instance = this;
         }
     }
-
-    // Met à jour la barre de progression
+    
+    /// <summary>
+    /// Met à jour la barre de progression
+    /// </summary>
+    /// <param name="newProgress"></param>
     public void IncrementProgress(float newProgress)
     {
         slider.value = newProgress;
