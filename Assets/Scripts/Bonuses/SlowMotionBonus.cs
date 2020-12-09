@@ -7,8 +7,11 @@ namespace Bonuses
     {
         // Gestionnaire de temps
         public TimeManager timeManager;
-    
-        // Lorsqu'un objet entre en collision avec le bonus
+        
+        /// <summary>
+        /// Lorsqu'un objet entre en collision avec le bonus
+        /// </summary>
+        /// <param name="other"></param>
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             // Verifie que l'objet entrant en collision est bien le joueur

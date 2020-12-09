@@ -20,19 +20,20 @@ public class Progression : MonoBehaviour
     private float posPlayer;
     private float length;
     private GameObject playerChild;
-
+    
     void Start()
     {
         sf_particles.SetActive(true);//false
         sf_text.text =  0 + " %";
         length = (sf_finish.position.x - sf_start.position.x);
     }
-
+    
     void Update()
     {   
         printProgression();
     }
 
+    
     void FixedUpdate(){
         endAnimation();
     }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Map.Projectiles
@@ -6,11 +7,20 @@ namespace Map.Projectiles
     {
         // Point à partir duquel les projectiles doivent apparaître
         public Transform wayPoint;
-        public Transform player;
+        private Transform player;
         public GameObject projectile;
         public float[] yPositionProjectiles;
         private bool spawned;
 
+
+        private void Start()
+        {
+            player = GameObject.Find("Player").transform;
+        }
+
+        /// <summary>
+        /// Crée les projectiles lorsque le joueur est assez proche
+        /// </summary>
         private void Update()
         {
             if (player.position.x >= wayPoint.position.x && !spawned)
