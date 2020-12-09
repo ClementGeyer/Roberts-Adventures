@@ -128,7 +128,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1681481335404689848, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
   m_PrefabInstance: {fileID: 1681481336870348425}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &10575082
+--- !u!114 &10575081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,18 +137,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 10575080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ead4cef67bf56b49aecc3f169569db6, type: 3}
+  m_Script: {fileID: 11500000, guid: e6914f9abde82d94fbf3379f70fff7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   greetingsText: {fileID: 1332551379}
   greetingsList:
-  - Incredible!
-  - Best thing ever!
-  - You're the best!
-  - Wouuah
-  - How did you do that?
-  - Best player I've seen !
-  - OMG !
+  - "G\xE9nial"
   timeToPrint: 1
 --- !u!1 &239306140
 GameObject:
@@ -567,6 +561,10 @@ PrefabInstance:
     - target: {fileID: 7356827095712015561, guid: b05995f6523ef154a9635fad95bb12ba, type: 3}
       propertyPath: m_SizeDelta.x
       value: 809.00146
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578162909293259192, guid: b05995f6523ef154a9635fad95bb12ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9120999815082771998, guid: b05995f6523ef154a9635fad95bb12ba, type: 3}
       propertyPath: m_RootOrder

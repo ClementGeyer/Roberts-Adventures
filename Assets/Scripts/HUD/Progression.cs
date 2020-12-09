@@ -20,24 +20,36 @@ public class Progression : MonoBehaviour
     private float posPlayer;
     private float length;
     private GameObject playerChild;
-    
+
+
+    /// <summary>
+    /// Est appelé une fois au début
+    /// </summary>
     void Start()
     {
         sf_particles.SetActive(true);//false
         sf_text.text =  0 + " %";
         length = (sf_finish.position.x - sf_start.position.x);
     }
-    
+
+    /// <summary>
+    /// Est appelé à toutes les frames
+    /// </summary>
     void Update()
     {   
         printProgression();
     }
 
-    
+    /// <summary>
+    /// Se lance tout les 0.02 secondes (Basé sur le deltaTime)
+    /// </summary>
     void FixedUpdate(){
         endAnimation();
     }
 
+    /// <summary>
+    /// Lance l'animation de fin
+    /// </summary>
     void endAnimation(){
         //Si on a passé la fin
         if(posPlayer >= 99.5){
@@ -63,7 +75,9 @@ public class Progression : MonoBehaviour
         }
     }
 
-    //Cette méthode permet d'afficher la progression du joueur
+    /// <summary>
+    /// Affiche la progression du joueur en %
+    /// </summary>
     void printProgression(){
 
         //On regarde si le joueur n'est pas null ou désactivé

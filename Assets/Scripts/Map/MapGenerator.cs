@@ -8,7 +8,7 @@ public class MapGenerator : MonoBehaviour
 
     private const float PLAYER_DISTANCE_SPAWN_LEVEL_PART = 5f;
     
-    public List<Transform> levelPartList;
+    public List<GameObject> levelPartList;
 
     public GameObject endPositionStart;
 
@@ -23,16 +23,16 @@ public class MapGenerator : MonoBehaviour
 
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        GameObject chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
     }
-    private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
+    private Transform SpawnLevelPart(GameObject levelPart, Vector3 spawnPosition)
     {
-        Transform levelPartTransform = Instantiate(levelPart, spawnPosition + new Vector3(30, 0,0), Quaternion.identity);
-        levelPartTransform.SetParent(GameObject.Find("Map").transform);
+        GameObject levelPartTransform = Instantiate(levelPart, spawnPosition + new Vector3(30, 0,0), Quaternion.identity);
+        levelPartTransform.GetComponent<Transform>().SetParent(GameObject.Find("Map").transform);
 
-        return levelPartTransform;
+        return levelPartTransform.GetComponent<Transform>();
     }
 
     // Update is called once per frame
