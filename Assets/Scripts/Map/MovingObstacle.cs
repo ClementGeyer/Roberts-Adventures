@@ -11,12 +11,17 @@ namespace Map
         private Transform target;
         private int destPoint = 0;
 
-
+        /// <summary>
+        /// Au démarrage, définit la première extrémité à atteindre
+        /// </summary>
         void Start()
         {
             target = waypoints[0];
         }
 
+        /// <summary>
+        /// Passe d'une extrémité à l'autre lorsque l'une des deux a été atteinte
+        /// </summary>
         void Update()
         {
             // Récupère la distance entre l'obstacle et une des extremités

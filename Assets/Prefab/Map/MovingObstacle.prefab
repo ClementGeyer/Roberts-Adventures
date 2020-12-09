@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 305675926783429807}
   - component: {fileID: 305675926783429806}
   - component: {fileID: 305675926783429809}
-  - component: {fileID: 4010349700619603777}
   m_Layer: 0
   m_Name: LowerPlateform
   m_TagString: canKillPlayer
@@ -203,18 +202,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.772778, y: 1.57476}
   m_EdgeRadius: 0
---- !u!114 &4010349700619603777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305675926783429808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d12173b69b1bb144928a5b56b543b4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &305675926783702410
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +262,6 @@ GameObject:
   - component: {fileID: 305675926885420369}
   - component: {fileID: 305675926885420368}
   - component: {fileID: 305675926885420371}
-  - component: {fileID: 290817977022187697}
   m_Layer: 0
   m_Name: UpperPlateform
   m_TagString: canKillPlayer
@@ -374,15 +360,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.836708, y: 1.4520261}
   m_EdgeRadius: 0
---- !u!114 &290817977022187697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305675926885420370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d12173b69b1bb144928a5b56b543b4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
