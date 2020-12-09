@@ -9,10 +9,8 @@ namespace Controller
     public class GameController : MonoBehaviour
     {
         private GameObject player;
-        private static bool flow = true;
-        private static bool selfefficiency = true;
-        private static List<bool> flowElements = new List<bool>();
-        private static List<bool> selfefficiencyElements = new List<bool>();
+        public static List<bool> flowElements = new List<bool>();
+        public static List<bool> selfefficiencyElements = new List<bool>();
         public void Start()
         {
             InitialiseLists();
@@ -26,12 +24,12 @@ namespace Controller
 
         private void InitialiseLists()
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 flowElements.Add(true);
             }
             
-            for(int i=0;i<2;i++)
+            for(int i=0;i<3;i++)
             {
                 selfefficiencyElements.Add(true);
             }
@@ -45,26 +43,26 @@ namespace Controller
         }
 
         // Désactive le flow
-        public void DisableFlow() { flow = !flow; }
+        public void DisableFlow() { flowElements[0] = !flowElements[0]; }
 
         // Désactive le sentiment d'auto-efficacité
-        public void DisableSelfEfficiency() { selfefficiency = !selfefficiency; }
+        public void DisableSelfEfficiency() { selfefficiencyElements[0] = !selfefficiencyElements[0]; }
         
-        public void SetDash() { flowElements[0] = !flowElements[0]; }
-        public void SetDashCooldown() { flowElements[1] = !flowElements[1]; }
-        public void SetKillObstacles() { flowElements[2] = !flowElements[2]; }
-        public void SetObstacleMovements() { flowElements[3] = !flowElements[3]; }
-        public void SetCameraAcceleration() { flowElements[4] = !flowElements[4]; }
+        public void SetDash() { flowElements[1] = !flowElements[1]; }
+        public void SetDashCooldown() { flowElements[2] = !flowElements[2]; }
+        public void SetKillObstacles() { flowElements[3] = !flowElements[3]; }
+        public void SetObstacleMovements() { flowElements[4] = !flowElements[4]; }
+        public void SetCameraAcceleration() { flowElements[5] = !flowElements[5]; }
 
-        public void SetBonuses() { selfefficiencyElements[0] = !selfefficiencyElements[0]; }
-        public void SetEffects() { selfefficiencyElements[1] = !selfefficiencyElements[1]; }
-        public void SetProgressionInfo() { selfefficiencyElements[2] = !selfefficiencyElements[2]; }
+        public void SetBonuses() { selfefficiencyElements[1] = !selfefficiencyElements[1]; }
+        public void SetEffects() { selfefficiencyElements[2] = !selfefficiencyElements[2]; }
+        public void SetProgressionInfo() { selfefficiencyElements[3] = !selfefficiencyElements[3]; }
 
 
         // Enlève des éléments du jeu propres au flow selon le choix du joueur
         private void RemoveFlow()
         {
-            if (!flow)
+            if (!flowElements[0])
             {
                 DisableDash();
                 DisableDashCoolDown();
@@ -74,23 +72,33 @@ namespace Controller
             }
             else
             {
-                if (!flowElements[0])
-                    DisableDash();
                 if (!flowElements[1])
-                    DisableDashCoolDown();
+                    DisableDash();
+                else
+                    EnableDash(); 
                 if (!flowElements[2])
-                    DisableMovementFromObstacles();
+                    DisableDashCoolDown();
+                else
+                    EnableDashCoolDown();
                 if (!flowElements[3])
-                    DisableKillObstacles();
+                    DisableMovementFromObstacles();
+                else
+                    EnableMovementFromObstacles();
                 if (!flowElements[4])
+                    DisableKillObstacles();
+                else
+                    EnableKillObstacles();
+                if (!flowElements[5])
                     DisableCameraAcceleration();
+                else
+                    EnableCameraAcceleration();
             }
         }
 
         // Enlève des éléments du jeu propres au sentiment d'auto-efficacité selon le choix du joueur
         private void RemoveSelfEfficiency()
         {
-            if (!selfefficiency)
+            if (!selfefficiencyElements[0])
             {
                 DisableBonuses();
                 DisableEffects();
@@ -98,28 +106,19 @@ namespace Controller
             }
             else
             {
-                if (!selfefficiencyElements[0])
-                    DisableBonuses();
                 if (!selfefficiencyElements[1])
-                    DisableEffects();
+                    DisableBonuses();
+                else
+                    EnableBonuses();
                 if (!selfefficiencyElements[2])
+                    DisableEffects();
+                else
+                    EnableEffects();
+                if (!selfefficiencyElements[3])
                     DisableProgressionInfo();
+                else
+                    EnableProgressionInfo();
             }
-        }
-
-        // Réactive tous les élements du jeu
-        public void EnableAll()
-        {
-            EnableDash();
-            EnableDashCoolDown();
-            EnableMovementFromObstacles();
-            EnableKillObstacles();
-            EnableCameraAcceleration();
-            EnableBonuses();
-            EnableEffects();
-            EnableProgressionInfo();
-            flow = true;
-            selfefficiency = true;
         }
 
         // Désactive le dash

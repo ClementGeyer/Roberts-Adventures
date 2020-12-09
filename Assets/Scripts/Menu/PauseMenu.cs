@@ -57,7 +57,6 @@ namespace Menu
         //Méthode permettant de quitter le niveau, on réactive aussi le temps sinon quand on relance le niveau le temps sera désactiver et les éléments du jeu
         public void QuitGame()
         {
-            gc.EnableAll();
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
         }
