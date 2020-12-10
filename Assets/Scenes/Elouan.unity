@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6914f9abde82d94fbf3379f70fff7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   greetingsText: {fileID: 1332551379}
   greetingsList:
   - "G\xE9nial"
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -237,8 +237,8 @@ MonoBehaviour:
 =======
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -472,19 +472,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2196673085462572348, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: sf_player
-      value: 
+      value:
       objectReference: {fileID: 1414526640}
     - target: {fileID: 2196673085462572348, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: sf_text
-      value: 
+      value:
       objectReference: {fileID: 952165080}
     - target: {fileID: 2196673085462572348, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: sf_particles
-      value: 
+      value:
       objectReference: {fileID: 1655189902}
     - target: {fileID: 2196673085462572348, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: sf_Collider
-      value: 
+      value:
       objectReference: {fileID: 2127401423}
     - target: {fileID: 2196673085462572349, guid: 0253e22485f1b044f9b78521e2d05dd1, type: 3}
       propertyPath: m_Name
@@ -585,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356827093961687446, guid: b05995f6523ef154a9635fad95bb12ba, type: 3}
       propertyPath: m_Camera
-      value: 
+      value:
       objectReference: {fileID: 1324641785}
     - target: {fileID: 7356827093961687447, guid: b05995f6523ef154a9635fad95bb12ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -776,8 +776,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &1266845323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1252,8 +1252,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 317dbebe378d01441af0fb399fb458df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   offsetCamera: 0
   speedCamera: 0.05
   increaseSpeedCamera: 0.005
@@ -1292,8 +1292,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 1
@@ -1323,8 +1323,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2999cc2ed4d720a47a359032660a4bad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   camera: {fileID: 1324641787}
   playerScript: {fileID: 1324641791}
   sf_player: {fileID: 1414526640}
@@ -1347,6 +1347,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df600da4ba262ea49bcd55f390af378e, type: 3}
+<<<<<<< HEAD
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
@@ -1358,6 +1359,10 @@ MonoBehaviour:
   tagsOfKillingWalls: []
   distanceMinToBeDestroyed: 0
 =======
+=======
+  m_Name:
+  m_EditorClassIdentifier:
+>>>>>>> d1d08c45069d6c88c1480d2ec45e7cd53c9708ca
   camera: {fileID: 1324641787}
   player: {fileID: 1414526640}
   pDash: {fileID: 1414526644}
@@ -1392,8 +1397,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -1422,8 +1427,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63d1d768d6ded474aa8fcf844a09dca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!4 &1414526646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1681481335464841279, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
@@ -1824,8 +1829,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e011531ed9dff224c854b4a786816c97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_camera: {fileID: 1324641785}
   EyePivot: {fileID: 450920925}
   rotateOverTime: 1
@@ -1895,8 +1900,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa08e94a4ad0bec4ab5d82ec91045f86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!198 &1922971609 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8483428955610536059, guid: 7bf2d75b8ae94724abddfddca4d18777, type: 3}
@@ -1959,7 +1964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9196196222337420654, guid: c8e54b1c607a48f4589fce27de1ccb43, type: 3}
       propertyPath: ShapeModule.m_Texture
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 9196196222337420654, guid: c8e54b1c607a48f4589fce27de1ccb43, type: 3}
       propertyPath: playOnAwake
@@ -2055,8 +2060,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd15470056f52c646beb9eb50af9b380, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &1681481336870348425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2082,7 +2087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: particules
-      value: 
+      value:
       objectReference: {fileID: 2923085884315401324, guid: ec5790a2ad9b9414ba05ca7e16ddb740, type: 3}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: distanceMinToBeDestroyed
@@ -2090,11 +2095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: DeadParticules
-      value: 
+      value:
       objectReference: {fileID: 2923085884315401314, guid: ec5790a2ad9b9414ba05ca7e16ddb740, type: 3}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: DashParticules
-      value: 
+      value:
       objectReference: {fileID: 1922971609}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: tagOfKillingWalls
@@ -2102,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: sf_DashText
-      value: 
+      value:
       objectReference: {fileID: 591860576}
     - target: {fileID: 1681481335464841272, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: maxDistanceDashInput
@@ -2130,7 +2135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335464841276, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Sprite
-      value: 
+      value:
       objectReference: {fileID: 21300000, guid: 8035b890559a6e149a517947be6eb1f0, type: 3}
     - target: {fileID: 1681481335464841277, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Constraints
@@ -2182,7 +2187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335894037313, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Sprite
-      value: 
+      value:
       objectReference: {fileID: 21300000, guid: 0376d1129d7dc9a41badd099c77ef15d, type: 3}
     - target: {fileID: 1681481335894037313, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_Size.x
@@ -2230,7 +2235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481335894037327, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: m_camera
-      value: 
+      value:
       objectReference: {fileID: 1324641785}
     - target: {fileID: 1681481335894037327, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: launchSpeed
@@ -2238,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1681481336379306170, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: impactParticles
-      value: 
+      value:
       objectReference: {fileID: 496449264}
     - target: {fileID: 2920615467654997557, guid: 295e06513a3daa449860a89a4ab03676, type: 3}
       propertyPath: Loop
@@ -2356,7 +2361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814954917840451223, guid: 67df0c971f277ad429866a8739aafa1b, type: 3}
       propertyPath: m_Camera
-      value: 
+      value:
       objectReference: {fileID: 1324641785}
     - target: {fileID: 6814954917840451224, guid: 67df0c971f277ad429866a8739aafa1b, type: 3}
       propertyPath: m_LocalPosition.x

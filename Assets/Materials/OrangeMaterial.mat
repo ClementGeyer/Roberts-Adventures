@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1084724275260135449
+--- !u!114 &-3302570268947713818
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,10 +20,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rope
+  m_Name: OrangeMaterial
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION _SPECULAR_SETUP
-  m_LightmapFlags: 2
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -81,47 +81,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _WorkflowMode: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - _BaseColor: {r: 0.31426364, g: 0.8056849, b: 0.7828182, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.31426364, g: 0.8056849, b: 0.7828182, a: 1}
-=======
-    - _BaseColor: {r: 0.35707217, g: 0.6317502, b: 0.16699493, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.35707217, g: 0.6317502, b: 0.16699493, a: 1}
->>>>>>> 876447f30b94e757912b3f7078dfc2d2ba55fbc1
-=======
-    - _BaseColor: {r: 0.93444955, g: 0.12725723, b: 0.46046406, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.93444955, g: 0.12725723, b: 0.46046406, a: 1}
->>>>>>> 09cbbef0c06c846643d55767d0e42e5338ffa6c1
-=======
-    - _BaseColor: {r: 0.5836305, g: 0.7518805, b: 0.2046876, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.5836305, g: 0.7518805, b: 0.2046876, a: 1}
->>>>>>> 703f06f4aaa3502bce4e9c31b372bcde13522820
-=======
-    - _BaseColor: {r: 0.08344114, g: 0.17288935, b: 0.34959465, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.08344114, g: 0.17288935, b: 0.34959465, a: 1}
->>>>>>> 0d792967deeb73222e8d7fbef5fd36f769fa64ad
-=======
-    - _BaseColor: {r: 0.9522097, g: 0.9717908, b: 0.57518107, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.9522097, g: 0.9717908, b: 0.57518107, a: 1}
->>>>>>> dabc1488cb41ad65b3dc76fa2f92200fc565884b
-=======
-    - _BaseColor: {r: 0.76049423, g: 0.6328192, b: 0.712721, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.76049423, g: 0.6328192, b: 0.712721, a: 1}
->>>>>>> d1d08c45069d6c88c1480d2ec45e7cd53c9708ca
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

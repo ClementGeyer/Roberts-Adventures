@@ -15,7 +15,6 @@ namespace Controller
  	    /// <summary>
         /// Démarre la partie et stocke le player présent dans la scène
         /// </summary>
-
         public void Start()
         {
             InitialiseLists();
@@ -27,15 +26,17 @@ namespace Controller
             RemoveSelfEfficiency();
         }
 
-        
+        /// <summary>
+        /// Initialise les listes de serious game options
+        /// </summary>
         private void InitialiseLists()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i <= 5; i++)
             {
                 flowElements.Add(true);
             }
             
-            for(int i=0;i<3;i++)
+            for(int i=0;i<=3;i++)
             {
                 selfefficiencyElements.Add(true);
             }
@@ -76,6 +77,7 @@ namespace Controller
         /// </summary>
         private void RemoveFlow()
         {
+            // Regarde sur la catégorie entière est désactivée
             if (!flowElements[0])
             {
                 DisableDash();
@@ -86,6 +88,7 @@ namespace Controller
             }
             else
             {
+                // Regarde pour chaque élément si il est désactivé
                 if (!flowElements[1])
                     DisableDash();
                 else
@@ -114,6 +117,7 @@ namespace Controller
         /// </summary>
         private void RemoveSelfEfficiency()
         {
+            // Regarde sur la catégorie entière est désactivée
             if (!selfefficiencyElements[0])
             {
                 DisableBonuses();
@@ -122,6 +126,7 @@ namespace Controller
             }
             else
             {
+                // Regarde pour chaque élément si il est désactivé
                 if (!selfefficiencyElements[1])
                     DisableBonuses();
                 else

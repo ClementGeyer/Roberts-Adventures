@@ -12,11 +12,16 @@ namespace Menu
         public Toggle flow;
         public Toggle selfefficiency;
 
+        /// <summary>
+        /// Quand on charge la scène, vérifie que les toggle sont bien désactivés pour les éléments désactivés
+        /// </summary>
         private void Start()
         {
             int i = 0;
+            // On parcours le tableau des élements du flow
             foreach (var toggle in flow.GetComponentsInChildren<Toggle>())
             {
+                // Si ils sont désactivés on désactive le toggle
                 if (!GameController.flowElements[i])
                 {
                     toggle.isOn = false;
@@ -26,8 +31,10 @@ namespace Menu
             }
             
             i = 0;
+            // On parcours le tableau des élements de l'auto efficacité
             foreach (var toggle in selfefficiency.GetComponentsInChildren<Toggle>())
             {
+                // Si ils sont désactivés on désactive le toggle
                 if (!GameController.selfefficiencyElements[i])
                 {
                     toggle.isOn = false;
