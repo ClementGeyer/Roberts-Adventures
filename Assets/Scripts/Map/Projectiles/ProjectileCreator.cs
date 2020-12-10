@@ -35,9 +35,9 @@ namespace Map.Projectiles
                 for (int i = 0; i < yPositionProjectiles.Length; i++)
                 {
                     Instantiate(projectile, position + new Vector3(50, yPositionProjectiles[i], 0), Quaternion.identity);
-                    
-                    var position1 = hud.position;
-                    Image warningHud = Instantiate(warning, new Vector3(position1.x+11, yPositionProjectiles[i]+4, position1.z), Quaternion.identity);
+                    var positionHud = hud.position;
+                    Image warningHud = Instantiate(warning, new Vector3(positionHud.x+11, yPositionProjectiles[i]+4, positionHud.z), Quaternion.identity);
+
                     warningHud.GetComponent<Transform>().SetParent(hud.transform);
                 }
             
