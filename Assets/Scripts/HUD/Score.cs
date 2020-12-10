@@ -7,10 +7,25 @@ namespace HUD
     {
         public Transform player;
         public Text scoreText;
+        public static int score;
+
+        private int buffPos;
+ 
+
+        public void addToScore(int p_score){
+            score += p_score;
+        }
 
         void Update()
         {
-            scoreText.text = (player.position.x*10).ToString("0");
+            
+            if(buffPos < (int)player.position.x){
+                score +=   ((int)player.position.x - buffPos) * 10;
+                scoreText.text = ""  + score;
+
+                buffPos = (int)player.position.x;
+            }
+            
         }
     }
 }

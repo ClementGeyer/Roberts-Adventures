@@ -11,12 +11,35 @@ public class EndCanvas : MonoBehaviour
     public GameObject playAgainMenuUI;
     public GameObject Map;
     public GameObject UI;
-    public GameObject confetti;
     public GameObject player;
     public CameraMovements cameraController;
     public TimeManager timeManager;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI tempsText;
+    public GameObject questionCanvas;
+    public GameObject greetingsCanvas;
+    public GameObject confetti;
+    public float timeBeforeEnd;
+    private bool levelFinished = false;
+
+    /// <summary>
+    /// On initialise avec un temps de 0.02f
+    /// </summary>
+    void Start()
+    {
+        timeBeforeEnd /= 0.02f;
+    }
+
+    /// <summary>
+    /// A chaque fixedUpdate on décrémente le temps avant d'afficher le menu de fin
+    /// </summary>
+    private void FixedUpdate()
+    {
+        if (levelFinished)
+        {
+            timeBeforeEnd--;
+        }
+    }
 
     /// <summary>
     /// Charge le niveau suivant
@@ -43,14 +66,31 @@ public class EndCanvas : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
-        timeManager.EndTimer();
-        player.SetActive(false);
-        Map.SetActive(false);
-        UI.SetActive(false);
-        endMenuUI.SetActive(true);
-        confetti.SetActive(true);
-        cameraController.setShouldMove(false);
-        setTime();
+        levelFinished = true;
+        
+    }
+
+    /// <summary>
+    /// Quand le personnage reste dans le trigger, on désactive tout
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (timeBeforeEnd < 0)
+        {
+            PlayerRespawn.EndLevel();
+            timeManager.EndTimer();
+            player.SetActive(false);
+            Map.SetActive(false);
+            UI.SetActive(false);
+            questionCanvas.SetActive(false);
+            greetingsCanvas.SetActive(false);
+            confetti.SetActive(true);
+            endMenuUI.SetActive(true);
+            cameraController.setShouldMove(false);
+            setTime();
+            setScore();
+        }
     }
 
     /// <summary>
@@ -76,7 +116,7 @@ public class EndCanvas : MonoBehaviour
     /// </summary>
     public void setScore()
     {
-        
+        scoreText.text = "Score : " + HUD.Score.score;
     }
     
 }

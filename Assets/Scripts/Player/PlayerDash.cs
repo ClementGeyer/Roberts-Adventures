@@ -21,6 +21,7 @@ public class PlayerDash : MonoBehaviour
     [Header("Particules")]
     [SerializeField] private ParticleSystem  DeadParticules;
     [SerializeField] private ParticleSystem  DashParticules;
+    [SerializeField] private GameObject  DestroyParticules;
     [SerializeField] private float distanceMinToBeDestroyed;
   
     [Header("UI Text")]
@@ -83,8 +84,22 @@ public class PlayerDash : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity, maxDistance);
                 //Si il touche quelque chose qui peut être détruit
                 if(hit && hit.transform.gameObject.tag == "canBeDestroyed" && Vector2.Distance(hit.point, firePoint.position) <= maxDistance ){
-                    //On met la cible à not active
-                  hit.transform.gameObject.SetActive(false);
+                                
+                            
+                    float width  = (hit.transform as RectTransform).rect.width;
+                    float height = (hit.transform as RectTransform).rect.height;
+
+                    float width_Object  = (DestroyParticules.transform as RectTransform).rect.width;
+                    float height_Object = (DestroyParticules.transform as RectTransform).rect.height;
+
+
+                    for(float i = 0; i < width; i+= width_Object){
+                        for(float j = 0; j < height; j+= height_Object){
+                            Instantiate(DestroyParticules, hit.transform.position + new Vector3(i-0.5f,j - 0.5f,0) - new Vector3(width/2,height/2,0)  , Quaternion.identity);
+                        }
+                    }
+
+                    hit.transform.gameObject.SetActive(false);
                 }
                 //Le dash n'est plus possible
                 canJump = false;

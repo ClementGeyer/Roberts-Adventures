@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2143400273892736841
+--- !u!1 &2367496590480837725
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2143400273892736842}
-  - component: {fileID: 2143400273892736843}
-  - component: {fileID: 2143400273892736840}
+  - component: {fileID: 2367496590480837723}
+  - component: {fileID: 2367496590480837722}
+  - component: {fileID: 2367496590480837720}
   m_Layer: 0
-  m_Name: SeriousGameManager
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2143400273892736842
+--- !u!4 &2367496590480837723
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143400273892736841}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 593.58575, y: 384.1747, z: -325.12796}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 2367496590480837725}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2143400273892736843
+--- !u!114 &2367496590480837722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143400273892736841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8469654f3813f864c9f2705de655ce9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gc: {fileID: 2143400273892736840}
---- !u!114 &2143400273892736840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143400273892736841}
+  m_GameObject: {fileID: 2367496590480837725}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bc6f8896ed70714ba0cd7e390424972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2367496590480837720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2367496590480837725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df600da4ba262ea49bcd55f390af378e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  player: {fileID: 0}
+  pDash: {fileID: 0}
+  DeadParticules: {fileID: 2923085884315401314, guid: ec5790a2ad9b9414ba05ca7e16ddb740, type: 3}
+  firePoint: {fileID: 0}
+  maxDistance: 3
+  tagsOfKillingWalls:
+  - canKillPlayer
+  distanceMinToBeDestroyed: 0.5

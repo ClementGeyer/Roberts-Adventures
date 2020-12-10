@@ -107,7 +107,7 @@ namespace Controller
 
                 // Convertit le temps écoulé en TimeSpan (pour une meilleure précision)
                 timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            
+
                 timeCounter.text = timePlaying.ToString("mm':'ss'.'ff");
 
                 // Reprend l'execution ici à la frame suivante

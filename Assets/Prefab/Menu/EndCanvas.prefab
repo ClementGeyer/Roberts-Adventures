@@ -731,7 +731,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6829130125289949289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5137984544932748464}
+        m_TargetAssemblyTypeName: EndCanvas, Assembly-CSharp
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3556317439698498897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,7 +852,7 @@ Canvas:
   m_GameObject: {fileID: 6829130125290861070}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -850,7 +862,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &6829130125290861064
 MonoBehaviour:
@@ -907,12 +919,14 @@ MonoBehaviour:
   playAgainMenuUI: {fileID: 0}
   Map: {fileID: 0}
   UI: {fileID: 0}
-  confetti: {fileID: 0}
   player: {fileID: 0}
   cameraController: {fileID: 0}
   timeManager: {fileID: 0}
   scoreText: {fileID: 1206804927564785048}
   tempsText: {fileID: 4116332868255387634}
+  questionCanvas: {fileID: 0}
+  greetingsCanvas: {fileID: 0}
+  timeBeforeEnd: 0
 --- !u!222 &6469428298494411332
 CanvasRenderer:
   m_ObjectHideFlags: 0

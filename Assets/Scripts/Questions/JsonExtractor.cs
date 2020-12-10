@@ -79,7 +79,7 @@ public class JsonExtractor : MonoBehaviour
 
     //Permet de regarder si notre réponse est la bonne
     public void checkIfTrue( TextMeshProUGUI TextMesh ){
-
+        
         if(m_question.Rep == TextMesh.text)
         {
             isTrue = 1;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private int numberOfRespawnMax;
     [SerializeField] private string tagToRespawn;
 
-    private bool levelEnded;
+    private static bool levelEnded;
    
     private int currentNbRespawn;
     private int RepsawnDelayBuffer;
@@ -35,6 +36,7 @@ public class PlayerRespawn : MonoBehaviour
     /// </summary>
     void Start()
     {
+         sf_canvas.SetActive(false);
          levelEnded = false;
          goToRespawn = GameObject.FindGameObjectsWithTag(tagToRespawn);
          RepsawnDelayBuffer = respawnDelay;
@@ -45,7 +47,7 @@ public class PlayerRespawn : MonoBehaviour
     /// </summary>
     void Update()
     {
-         respawnPlayer();
+        respawnPlayer();
         if(levelEnded){
             //todo make spawn finish stuff
         }
@@ -76,39 +78,50 @@ public class PlayerRespawn : MonoBehaviour
         
         //Si le joueur est mort et que le niveau n'est pas fini
         if(!sf_player.activeSelf && !levelEnded){
-            sf_canvas.SetActive(true);
 
-            //Si le joueur à trouvé la bonne réponse
-            if(sf_script.userFindTrueRep() == 1){
-                //On fait respawn le joueur
-                sf_canvas.SetActive(false);
-                sf_player.SetActive(true);
-                sf_script.DieQuestion();
-            }
-            //Si le joueur à faux
-            else if(sf_script.userFindTrueRep() == -1){
-                if(!sf_player.activeSelf && currentNbRespawn < numberOfRespawnMax && startDelay <= 0 && respawnDelay<=0){
-                    respawnDelay = RepsawnDelayBuffer;
-                    currentNbRespawn++;
+            int luckyDay = Random.Range(0, 3);
 
-                    //On reset tous les objets détruits 
-                    foreach(GameObject respawn in goToRespawn)
-                        if(!respawn.activeSelf)
-                            respawn.SetActive(true);
-
-                    //On remet les valeurs à un état normal
-                    sf_camera.position = new Vector3(sf_start.position.x + startOffset,sf_camera.position.y, sf_camera.position.z) ;
-                    sf_player.GetComponent<Transform>().position = sf_start.position;
+            if(luckyDay == 2 && respawnDelay<=0){
+                sf_canvas.SetActive(true);
+                //Si le joueur à trouvé la bonne réponse
+                if(sf_script.userFindTrueRep() == 1){
+                    
+                    //On fait respawn le joueur
                     sf_canvas.SetActive(false);
                     sf_player.SetActive(true);
-                    camera.setShouldMove(true);
-                    camera.speedCamera = camera.SpeedCameraBuff;
-                    playerScript.setDead(false);
-
-                    //On reprends une quetsion au hasard que l'on affichera pas avant la prochaine mort
                     sf_script.DieQuestion();
                 }
+                //Si le joueur à faux
+                else if(sf_script.userFindTrueRep() == -1){
+                    if(!sf_player.activeSelf && currentNbRespawn < numberOfRespawnMax && startDelay <= 0 && respawnDelay<=0 ){
+                    /*  respawnDelay = RepsawnDelayBuffer;
+                        currentNbRespawn++;
+
+                        //On reset tous les objets détruits 
+                        foreach(GameObject respawn in goToRespawn)
+                            if(!respawn.activeSelf)
+                                respawn.SetActive(true);
+
+                        //On remet les valeurs à un état normal
+                        sf_camera.position = new Vector3(sf_start.position.x + startOffset,sf_camera.position.y, sf_camera.position.z) ;
+                        sf_player.GetComponent<Transform>().position = sf_start.position;
+                        sf_canvas.SetActive(false);
+                        sf_player.SetActive(true);
+                        camera.setShouldMove(true);
+                        camera.speedCamera = camera.SpeedCameraBuff;
+                        playerScript.setDead(false);*/
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                        //On reprends une quetsion au hasard que l'on affichera pas avant la prochaine mort
+                        sf_script.DieQuestion();
+                    }
+                }
             }
+            else if(respawnDelay<=0 && levelEnded){
+                sf_canvas.SetActive(false);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+           
+            
         }
 
     }
@@ -119,7 +132,7 @@ public class PlayerRespawn : MonoBehaviour
     /// Est utilisée par d'autres scripts pour signifier que c'est la fin du niveau
     /// </remark>
     /// </summary>
-    void EndLevel(){
+    public static void EndLevel(){
          levelEnded = true;
     }
 }
