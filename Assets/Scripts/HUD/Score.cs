@@ -11,6 +11,10 @@ namespace HUD
 
         private int buffPos;
  
+        private void Start()
+        {
+            score = 0;
+        }
 
         public void addToScore(int p_score){
             score += p_score;

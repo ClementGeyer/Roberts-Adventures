@@ -15,7 +15,10 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     [Header("Particules")]
     [SerializeField] private ParticleSystem  DeadParticules;
-    
+
+    [Header("Time while you cant die")]
+    [SerializeField] private float timeInvicibleRespawn;
+
     [Header("Raycast2D origin")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private int maxDistance;
@@ -27,7 +30,9 @@ public class PlayerCollisionDetection : MonoBehaviour
     private  RaycastHit2D hitBottom;
     private  RaycastHit2D hitLeft;
 
+    private float timeBuffer;
     private bool isDead;
+    private static bool isInvicible;
 
     /// <summary>
     /// Met l'état joueur à la valeur du parametre 
@@ -46,13 +51,11 @@ public class PlayerCollisionDetection : MonoBehaviour
 
         /*On fait un raycast pour savoir si il touche quelque chose*
             Si oui on regarde son tag et si il correspond, alors on explose le joeuur et on fait apparaitre des particules*/
-
-        hit = Physics2D.Raycast(firePoint.position,player.GetComponent<Rigidbody2D>().velocity, distanceMinToBeDestroyed);
-        hitRight = Physics2D.Raycast(firePoint.position,new Vector3(1,0,0), distanceMinToBeDestroyed);
-        hitBottom = Physics2D.Raycast(firePoint.position,Vector3.down, distanceMinToBeDestroyed);
-        hitLeft = Physics2D.Raycast(firePoint.position,Vector3.left, distanceMinToBeDestroyed);
-
-        
+        if(!isInvicible){
+            hit         = Physics2D.Raycast(player.GetComponent<Transform>().position, player.GetComponent<Rigidbody2D>().velocity.normalized,    distanceMinToBeDestroyed);
+            hitRight    = Physics2D.Raycast(player.GetComponent<Transform>().position, new Vector3(1,0,0),                             distanceMinToBeDestroyed);
+            hitBottom   = Physics2D.Raycast(player.GetComponent<Transform>().position, Vector3.down,                                   distanceMinToBeDestroyed);
+            hitLeft     = Physics2D.Raycast(player.GetComponent<Transform>().position, Vector3.left,                                   distanceMinToBeDestroyed);
 
          foreach(string tag in tagsOfKillingWalls ){   
             if( (hit        && hit.transform.gameObject.tag       == tag )
@@ -68,6 +71,8 @@ public class PlayerCollisionDetection : MonoBehaviour
                 camera.setShouldMove(false);
              }
         }
+        }
+      
     }
 
 
@@ -90,6 +95,24 @@ public class PlayerCollisionDetection : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
+        if(isInvicible)
+            timeInvicibleRespawn--;
+
+        if(timeInvicibleRespawn < 0 && isInvicible){
+            isInvicible = false;
+            timeInvicibleRespawn = timeBuffer;
+        }
+
         deadDetection();
+    }
+
+    public static void setInvicible(bool p_bool ){
+        isInvicible = p_bool;
+    }
+
+    private void Start()
+    {
+        timeInvicibleRespawn = timeInvicibleRespawn / 0.02f;
+        timeBuffer = timeInvicibleRespawn;
     }
 }
