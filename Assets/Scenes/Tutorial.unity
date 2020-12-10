@@ -3204,7 +3204,7 @@ PrefabInstance:
       objectReference: {fileID: 1505002811}
     - target: {fileID: 4102542828836335341, guid: d8fe76adfbaa7604eb8fdbaf1815e0ae, type: 3}
       propertyPath: timeBeforeEnd
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4102542828836335341, guid: d8fe76adfbaa7604eb8fdbaf1815e0ae, type: 3}
       propertyPath: UI
@@ -4523,7 +4523,7 @@ PrefabInstance:
       objectReference: {fileID: 1505002811}
     - target: {fileID: 5137984544932748464, guid: 10452c4274b5f4844a24ee9bfc18d680, type: 3}
       propertyPath: timeBeforeEnd
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5137984544932748464, guid: 10452c4274b5f4844a24ee9bfc18d680, type: 3}
       propertyPath: questionCanvas
