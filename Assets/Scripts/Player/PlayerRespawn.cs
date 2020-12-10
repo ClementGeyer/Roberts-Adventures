@@ -155,6 +155,10 @@ public class PlayerRespawn : MonoBehaviour
                 sf_canvas.SetActive(false);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            else if(respawnDelay<=0 && !levelEnded){
+                sf_canvas.SetActive(false);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
            
             
         }

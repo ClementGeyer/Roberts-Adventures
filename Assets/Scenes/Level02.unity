@@ -635,7 +635,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2143400273892736843, guid: 1f7f3fc01daf51e47b6ba01c4846ae40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f7f3fc01daf51e47b6ba01c4846ae40, type: 3}
 --- !u!1 &154529907 stripped
 GameObject:
@@ -1272,6 +1273,14 @@ PrefabInstance:
       propertyPath: sf_DashText
       value: 
       objectReference: {fileID: 1285523159}
+    - target: {fileID: 1663243935494291407, guid: 3c7278f731ea63744bf6b865b4363f04, type: 3}
+      propertyPath: distanceMinToBeDestroyed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663243935494291407, guid: 3c7278f731ea63744bf6b865b4363f04, type: 3}
+      propertyPath: maxDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1663243935650725048, guid: 3c7278f731ea63744bf6b865b4363f04, type: 3}
       propertyPath: m_camera
       value: 
@@ -1481,7 +1490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367496590480837720, guid: c0078f8edb9fa8142aa9d72f58daef6d, type: 3}
       propertyPath: distanceMinToBeDestroyed
-      value: 1.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2367496590480837720, guid: c0078f8edb9fa8142aa9d72f58daef6d, type: 3}
       propertyPath: timeInvicibleRespawn
@@ -1690,6 +1699,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6998254347188141164, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998254347188141164, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 466091411}
     - target: {fileID: 6998254347188141165, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -37,7 +37,7 @@ namespace Controller
                 if (distance <= minimumDistance)
                 {
                     var positionHud = hud.position;
-                    TextMeshPro textHud = Instantiate(text, new Vector3(positionHud.x-1, positionHud.y-5, positionHud.z), Quaternion.identity);
+                    TextMeshPro textHud = Instantiate(text, new Vector3(positionHud.x+1, positionHud.y-5, positionHud.z), Quaternion.identity);
                     textHud.GetComponent<Transform>().SetParent(hud.transform);
                     Destroy(textHud, 3);
                     spawned = true;
