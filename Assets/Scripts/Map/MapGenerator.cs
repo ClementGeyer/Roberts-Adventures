@@ -12,6 +12,7 @@ public class MapGenerator : MonoBehaviour
 
     public GameObject endPositionStart;
 
+    public int xOffset;
     private Vector3 lastEndPosition;
     
     
@@ -29,7 +30,7 @@ public class MapGenerator : MonoBehaviour
     }
     private Transform SpawnLevelPart(GameObject levelPart, Vector3 spawnPosition)
     {
-        GameObject levelPartTransform = Instantiate(levelPart, spawnPosition + new Vector3(30, 0,0), Quaternion.identity);
+        GameObject levelPartTransform = Instantiate(levelPart, spawnPosition + new Vector3(xOffset, 0,0), Quaternion.identity);
         levelPartTransform.GetComponent<Transform>().SetParent(GameObject.Find("Map").transform);
 
         return levelPartTransform.GetComponent<Transform>();

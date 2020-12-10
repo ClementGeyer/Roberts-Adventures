@@ -112,8 +112,9 @@ public class PlayerDash : MonoBehaviour
         //On fait un raycast
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, sf_playerRB.velocity, maxDistanceDashInput);
         //Si il touche alors on affiche commme quoi le dash est accecible et qu'il faut penser à l'utiliser
-        bool dashUi = hit && hit.transform.gameObject.tag == "canBeDestroyed" ? true : false;            
-        sf_DashText.gameObject.SetActive(dashUI);
+        bool dashUi = hit && hit.transform.gameObject.tag == "canBeDestroyed";
+        
+        sf_DashText.SetActive(dashUi);
 
     }
 
