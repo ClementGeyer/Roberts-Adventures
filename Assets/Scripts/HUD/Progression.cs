@@ -1,4 +1,4 @@
-﻿﻿﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Progression : MonoBehaviour
@@ -9,6 +9,9 @@ public class Progression : MonoBehaviour
     [Header("Transform of Start and Finish objects:")]
     [SerializeField] private Transform sf_start;
     [SerializeField] private Transform sf_finish;
+    [Header("Main camera")]
+    [SerializeField] private Controller.CameraMovements sf_camera;
+
     [Header("Transform of the player:")]
     [SerializeField] private GameObject sf_player;
 
@@ -73,7 +76,14 @@ public class Progression : MonoBehaviour
             //On enlève la gravité
             if(sf_player.GetComponent<Rigidbody2D>().gravityScale != 0)
                  sf_player.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+           
         }
+
+        if(posPlayer >= 100)
+             sf_camera.setShouldMove(false);
+
+        //Todo appeler fin
     }
 
     /// <summary>
@@ -106,7 +116,7 @@ public class Progression : MonoBehaviour
             
             //On applique le résultat obtenu dans le texte de progression
             sf_text.text =  (int)posPlayer + " %";
-            //ProgressBar.instance.IncrementProgress(posPlayer/100);
+            ProgressBar.instance.IncrementProgress(posPlayer/100);
         }
     }
 }

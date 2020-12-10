@@ -9,6 +9,7 @@ public class TricksDetector : MonoBehaviour
     [SerializeField]private GameObject greetingsText;
     [SerializeField]private List<string> greetingsList;
     [SerializeField]private float timeToPrint;
+    [SerializeField]public HUD.Score sf_Score;
 
     private bool hasToPrint;
     private Transform playerTransform;
@@ -62,6 +63,7 @@ public class TricksDetector : MonoBehaviour
             int idList = Random.Range(0, greetingsList.Count);  
             //On set le texte sur une des valeurs de la liste
             greetingsText.GetComponent<TextMeshProUGUI>().text = greetingsList[idList];
+            sf_Score.addToScore(10);
             hasToPrint = true;
             currentRotation = 0;
             deltaRotation = 0;
