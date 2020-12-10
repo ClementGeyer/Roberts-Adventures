@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using TMPro;
@@ -12,7 +13,13 @@ namespace Menu
         public GameObject playerNameUI;
         public InputField inputName;
         public static string playerName;
-        
+
+        public void Start()
+        {
+            if(playerName != null)
+                playerNameUI.SetActive(false);
+        }
+
         /// <summary>
         /// Quand on clique sur le bouton on récupère la valeur du nom du joueur
         /// </summary>

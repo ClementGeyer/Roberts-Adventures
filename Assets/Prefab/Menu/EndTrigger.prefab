@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4102542828836335342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 493.01, y: 8.74, z: -94.012856}
-  m_LocalScale: {x: 0.058588944, y: 1.0751421, z: 1}
+  m_LocalScale: {x: 0.5585889, y: 1.0751421, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,3 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endMenuUI: {fileID: 0}
+  playAgainMenuUI: {fileID: 0}
+  Map: {fileID: 0}
+  UI: {fileID: 0}
+  player: {fileID: 0}
+  cameraController: {fileID: 0}
+  timeManager: {fileID: 0}
+  scoreText: {fileID: 0}
+  tempsText: {fileID: 0}
+  questionCanvas: {fileID: 0}
+  greetingsCanvas: {fileID: 0}
+  confetti: {fileID: 0}
+  timeBeforeEnd: 0
