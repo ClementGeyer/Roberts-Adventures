@@ -67,7 +67,6 @@ public class EndCanvas : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         levelFinished = true;
-        
     }
 
     /// <summary>

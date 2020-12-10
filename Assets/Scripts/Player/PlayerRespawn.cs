@@ -25,7 +25,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private int numberOfRespawnMax;
     [SerializeField] private string tagToRespawn;
 
-    private static bool levelEnded;
+    public static bool levelEnded;
    
     private int currentNbRespawn;
     private int RepsawnDelayBuffer;
