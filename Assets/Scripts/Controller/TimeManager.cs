@@ -114,5 +114,10 @@ namespace Controller
                 yield return null;
             }
         }
+
+        public TimeSpan getTimePlaying()
+        {
+            return timePlaying;
+        }
     }
 }

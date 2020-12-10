@@ -25,7 +25,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private int numberOfRespawnMax;
     [SerializeField] private string tagToRespawn;
 
-    private bool levelEnded;
+    private static bool levelEnded;
    
     private int currentNbRespawn;
     private int RepsawnDelayBuffer;
@@ -147,7 +147,7 @@ public class PlayerRespawn : MonoBehaviour
                     }
                 }
             }
-            else if(respawnDelay<=0){
+            else if(respawnDelay<=0 && levelEnded){
                 sf_canvas.SetActive(false);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -167,7 +167,7 @@ public class PlayerRespawn : MonoBehaviour
     /// Est utilisée par d'autres scripts pour signifier que c'est la fin du niveau
     /// </remark>
     /// </summary>
-    void EndLevel(){
+    public static void EndLevel(){
          levelEnded = true;
     }
 }

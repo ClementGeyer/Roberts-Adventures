@@ -8,19 +8,25 @@ namespace Menu
 
         public GameObject menu;
 
-        //Méthode qui permet de charger la scène de sélection de niveaux quand on appuie sur le bouton "Histoire"
+        /// <summary>
+        /// Charge le menu de sélection des niveaux
+        /// </summary>
         public void LoadLevelSelection()
         {
             SceneManager.LoadScene(1);
         }
 
-        //Méthode qui permet de quitter le jeu quand on appuie sur le bouton "Quit"
+        /// <summary>
+        /// Quitte le jeu
+        /// </summary>
         public void QuitGame()
         {
             Application.Quit();
         }
 
-        //Méthode qui permet d'afficher le menu des options
+        /// <summary>
+        /// Charge le menu des options
+        /// </summary>
         public void LoadOptionsMenu()
         {
             menu.SetActive(true);

@@ -7,7 +7,7 @@ namespace HUD
     {
         public Transform player;
         public Text scoreText;
-        public int score;
+        public static int score;
 
         private int buffPos;
  
