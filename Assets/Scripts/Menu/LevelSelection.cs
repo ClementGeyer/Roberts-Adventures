@@ -8,17 +8,20 @@ namespace Menu
 {
     public class LevelSelection : MonoBehaviour
     {
-        //Cet attribut est le pannel du prefab "Options"
         public GameObject optionsMenu;
         public Toggle flow;
         public Toggle selfefficiency;
 
-
+        /// <summary>
+        /// Quand on charge la scène, vérifie que les toggle sont bien désactivés pour les éléments désactivés
+        /// </summary>
         private void Start()
         {
             int i = 0;
+            // On parcours le tableau des élements du flow
             foreach (var toggle in flow.GetComponentsInChildren<Toggle>())
             {
+                // Si ils sont désactivés on désactive le toggle
                 if (!GameController.flowElements[i])
                 {
                     toggle.isOn = false;
@@ -28,8 +31,10 @@ namespace Menu
             }
             
             i = 0;
+            // On parcours le tableau des élements du l'auto efficacité
             foreach (var toggle in selfefficiency.GetComponentsInChildren<Toggle>())
             {
+                // Si ils sont désactivés on désactive le toggle
                 if (!GameController.selfefficiencyElements[i])
                 {
                     toggle.isOn = false;
@@ -39,24 +44,34 @@ namespace Menu
             }
         }
 
-        //Cette méthode permet de charger le niveau correspondant à l'index du bouton dans le buildIndex
+        /// <summary>
+        /// Charge le niveau envoyé en paramètre
+        /// </summary>
+        /// <param name="lvlIndex"></param>
         public void LoadLevel(int lvlIndex)
         {
             SceneManager.LoadScene(lvlIndex);
         }
 
-        //Cette méthode permet de charger le menu principal en appuyant sur la flèche
+        /// <summary>
+        /// Retourne au menu principal
+        /// </summary>
         public void BackArrow()
         {
             SceneManager.LoadScene(0);
         }
     
-        // cette méthode permet de charger le menu des options
+        /// <summary>
+        /// Charge le menu des options
+        /// </summary>
         public void LoadOptionsMenu()
         {
             optionsMenu.SetActive(true);
         }
 
+        /// <summary>
+        /// Désactive tous les éléments de flow quand on clic sur le toggle flow
+        /// </summary>
         public void FlowClick()
         {
             foreach (var toggle in flow.GetComponentsInChildren<Toggle>())
@@ -66,6 +81,9 @@ namespace Menu
             }
         }
         
+        /// <summary>
+        /// Désactive tous les éléments de l'auto efficacité quand on clic sur le toggle auto efficacité
+        /// </summary>
         public void SelEfficiencyClick()
         {
             foreach (var toggle in selfefficiency.GetComponentsInChildren<Toggle>())
