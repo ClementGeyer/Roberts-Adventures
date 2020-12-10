@@ -30,12 +30,12 @@ namespace Controller
         
         private void InitialiseLists()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i <= 5; i++)
             {
                 flowElements.Add(true);
             }
             
-            for(int i=0;i<3;i++)
+            for(int i=0;i<=3;i++)
             {
                 selfefficiencyElements.Add(true);
             }
