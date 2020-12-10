@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7793336471466025211}
   m_Layer: 0
-  m_Name: Projectiles
+  m_Name: ProjectileCreator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,6 +106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPoint: {fileID: 7793336470346329848}
-  player: {fileID: 0}
   projectile: {fileID: 5601721523415022398, guid: 6bdc1c97b13560640a8cb7fd497acf5a, type: 3}
+  warning: {fileID: 5700804025894442762, guid: 0f56731acb98e97429e22d636d1e1383, type: 3}
   yPositionProjectiles: []
