@@ -616,7 +616,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 940878955}
   levelPartList:
+  - {fileID: 8889446832543641495, guid: 97291364400c0e742acf2d2c1683e9ba, type: 3}
+  - {fileID: 7856633704647091591, guid: a331981d4ac3f3e42b298719a79d77cc, type: 3}
+  - {fileID: 5692222473569096240, guid: 55e33412bac0ed740b34c5aa6b3e076d, type: 3}
+  - {fileID: 8889446832543641495, guid: 8d545de2f1a989540b3003e6e529b034, type: 3}
+  - {fileID: 8889446832543641495, guid: d406df4f4d43b8f4e9747d049e066202, type: 3}
   - {fileID: 8889446832543641495, guid: 7e6dfae508587a447bdc258bfb1a347a, type: 3}
+  - {fileID: 7856633704647091591, guid: 49d662a462478e34bb50b47ebb5f18ee, type: 3}
+  - {fileID: 8889446832543641495, guid: e826e534ecdb7d144be2846bed3198fc, type: 3}
+  - {fileID: 8889446832543641495, guid: 1163111cc12de4a46a0c6e1f0768d6d8, type: 3}
+  - {fileID: 8889446832543641495, guid: 4a55a0f06e4946444877a108d4cc30ec, type: 3}
+  - {fileID: 8889446832543641495, guid: b37ce6d962873294c94afaa185129626, type: 3}
+  - {fileID: 8889446832543641495, guid: 2f8b3a8c00c17504a845f29795aca640, type: 3}
+  - {fileID: 8889446832543641495, guid: 979179dd7f5c9694c9aeb07029df0f75, type: 3}
   endPositionStart: {fileID: 697166618}
   xOffset: 10
 --- !u!4 &436269311
@@ -1733,11 +1745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6914f9abde82d94fbf3379f70fff7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greetingsText: {fileID: 2031894526}
-  greetingsList:
-  - Youpi
-  timeToPrint: 1
-  sf_Score: {fileID: 0}
 --- !u!1 &1497461409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2021,14 @@ PrefabInstance:
       propertyPath: gc
       value: 
       objectReference: {fileID: 183209540}
+    - target: {fileID: 6998254347188141164, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998254347188141164, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 816023342}
     - target: {fileID: 6998254347188141165, guid: 4342135b740666a4b9f80c5821561cbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2381,11 +2396,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860402592}
   m_CullTransparentMesh: 0
---- !u!1 &2031894526 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8578162909293259192, guid: b05995f6523ef154a9635fad95bb12ba, type: 3}
-  m_PrefabInstance: {fileID: 319958096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2085128898
 GameObject:
   m_ObjectHideFlags: 0
