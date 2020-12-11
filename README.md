@@ -10,7 +10,12 @@ Pour faire comprendre au joueur les différents principes traités, il pourra co
 
 <h3>Téléchargement:</h3>
 Les téléchargements s’effectuent à l’adresse suivante : 
-https://mega.nz/file/MS4XWIhL#A-Lufjmzy8-XFWkcRaOx6UIC7CejwooEvDqJSBr0Wus
+[Téléchargement](https://mega.nz/file/FPRGSTrB#QNPamKmyke0RAeArLLlS-AGIeZyeZVzFDkNSD5xH9P4)
+
+Afin de pouvoir jouer, dezzipez le fichier téléchargé et lancez **T3.exe**.
+
+<h3>Documentation:</h3>
+Notre documentation est visible ici : [Documentation](https://flat-earth.shop/).
 
 
 <h3>Captures d’écran</h3>
