@@ -2652,6 +2652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 2294150653364689411, guid: b9dc1e57871a72841b386b4ca1670185, type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2294150653364689437, guid: b9dc1e57871a72841b386b4ca1670185, type: 3}
       propertyPath: hero
       value: 

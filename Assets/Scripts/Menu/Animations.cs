@@ -19,6 +19,6 @@ public class Animations : MonoBehaviour
     /// </summary>
     public void OnAnimationComplete()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(5);
     }
 }

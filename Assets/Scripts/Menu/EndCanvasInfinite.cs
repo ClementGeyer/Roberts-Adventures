@@ -18,7 +18,6 @@ namespace Menu
         public TextMeshProUGUI scoreText;
         public GameObject questionCanvas;
         public GameObject greetingsCanvas;
-        public GameObject confetti;
         public GameObject panelEndMenu;
 
         /// <summary>
@@ -43,7 +42,6 @@ namespace Menu
                 UI.SetActive(false);
                 questionCanvas.SetActive(false);
                 greetingsCanvas.SetActive(false);
-                confetti.SetActive(true);
                 panelEndMenu.SetActive(true);
                 cameraController.setShouldMove(false);
                 setScore();
@@ -55,8 +53,7 @@ namespace Menu
         /// </summary>
         public void PlayAgain()
         {
-            endMenuUI.SetActive(false);
-            confetti.SetActive(false);
+            SceneManager.LoadScene(5);
         }
         
         /// <summary>

@@ -44,6 +44,9 @@ namespace Menu
             }
         }
 
+        /// <summary>
+        /// Activation de toutes les fonctionnalités du flow en cliquant sur la checkBox Flow
+        /// </summary>
         public void FlowClick()
         {
             foreach (var toggle in flow.GetComponentsInChildren<Toggle>())
@@ -53,6 +56,9 @@ namespace Menu
             }
         }
         
+        /// <summary>
+        /// Activation de toutes les fonctionnalités du sentiment d'auto-efficacité en cliquant sur la checkBox Selfefficency
+        /// </summary>
         public void SelEfficiencyClick()
         {
             foreach (var toggle in selfefficiency.GetComponentsInChildren<Toggle>())
@@ -62,6 +68,9 @@ namespace Menu
             }
         }
 
+        /// <summary>
+        /// Charge la scène selectionné
+        /// </summary>
         public void Play()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

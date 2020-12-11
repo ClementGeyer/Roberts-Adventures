@@ -63,7 +63,7 @@ public class TricksDetector : MonoBehaviour
             int idList = Random.Range(0, greetingsList.Count);  
             //On set le texte sur une des valeurs de la liste
             greetingsText.GetComponent<TextMeshProUGUI>().text = greetingsList[idList];
-            sf_Score.addToScore(10);
+            sf_Score.addToScore(30);
             hasToPrint = true;
             currentRotation = 0;
             deltaRotation = 0;

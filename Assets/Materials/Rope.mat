@@ -86,6 +86,7 @@ Material:
     m_Colors:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _BaseColor: {r: 0.66147363, g: 0.6502565, b: 0.7982968, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.66147363, g: 0.6502565, b: 0.7982968, a: 1}
@@ -99,5 +100,10 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.49016207, g: 0.9164957, b: 0.28556198, a: 1}
 >>>>>>> 8aa38b76150acdcb55d1b21969ab0070719d69d7
+=======
+    - _BaseColor: {r: 0.8395407, g: 0.27497536, b: 0.50082856, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.8395407, g: 0.27497536, b: 0.50082856, a: 1}
+>>>>>>> 8ed36f1da1fdee76aa560912bd8f51c4241df1ec
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
