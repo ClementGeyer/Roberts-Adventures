@@ -16,10 +16,15 @@ namespace HUD
             score = 0;
         }
 
+        /// <summary>
+        /// Ajoute le paramètre p_score au score
+        /// </summary>
+        /// <param name="p_score"></param>
         public void addToScore(int p_score){
             score += p_score;
         }
 
+        
         void Update()
         {
             

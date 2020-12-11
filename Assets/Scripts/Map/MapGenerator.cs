@@ -21,12 +21,22 @@ public class MapGenerator : MonoBehaviour
         SpawnLevelPart();
     }
 
+    /// <summary>
+    /// Choisit aléatoirement un obstacle à générer
+    /// </summary>
     private void SpawnLevelPart()
     {
         GameObject chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
         Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
     }
+    
+    /// <summary>
+    /// Génère l'obstacle sélectionné
+    /// </summary>
+    /// <param name="levelPart"></param>
+    /// <param name="spawnPosition"></param>
+    /// <returns></returns>
     private Transform SpawnLevelPart(GameObject levelPart, Vector3 spawnPosition)
     {
         GameObject levelPartTransform = Instantiate(levelPart, new Vector3(spawnPosition.x,0,spawnPosition.z) + new Vector3(xOffset, 0,0), Quaternion.identity);

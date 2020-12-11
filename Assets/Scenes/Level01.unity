@@ -9136,6 +9136,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 803512621702207187, guid: 5d0308dd195497c46904b47da7927c60, type: 3}
+      propertyPath: m_TagString
+      value: ProgressInfoToHide
+      objectReference: {fileID: 0}
     - target: {fileID: 803512621702207189, guid: 5d0308dd195497c46904b47da7927c60, type: 3}
       propertyPath: player
       value: 

@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 803512621702207189}
   m_Layer: 5
   m_Name: ScoreText
-  m_TagString: Untagged
+  m_TagString: ProgressInfoToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 803512621956839270}
   m_Layer: 5
   m_Name: SpriteBack
-  m_TagString: Untagged
+  m_TagString: ProgressInfoToHide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
