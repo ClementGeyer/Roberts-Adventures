@@ -37,7 +37,7 @@ public class PlayerRespawn : MonoBehaviour
     /// </summary>
     void Start()
     {
-         luckyDay = Random.Range(0, 3);
+         luckyDay = Random.Range(0, 10);
          sf_canvas.SetActive(false);
          levelEnded = false;
          goToRespawn = GameObject.FindGameObjectsWithTag(tagToRespawn);
@@ -81,10 +81,10 @@ public class PlayerRespawn : MonoBehaviour
         //Si le joueur est mort et que le niveau n'est pas fini
         if(!sf_player.activeSelf && !levelEnded){
 
-           
-
+                
             if(luckyDay == 2 && respawnDelay<=0){
                 sf_canvas.SetActive(true);
+                camera.setShouldMove(false);
                 //Si le joueur à trouvé la bonne réponse
                 if(sf_script.userFindTrueRep() == 1){
                     
@@ -100,69 +100,20 @@ public class PlayerRespawn : MonoBehaviour
                 //Si le joueur à faux
                 else if(sf_script.userFindTrueRep() == -1){
                     if(!sf_player.activeSelf && currentNbRespawn < numberOfRespawnMax && startDelay <= 0 && respawnDelay<=0 ){
-                    /*  respawnDelay = RepsawnDelayBuffer;
-                        currentNbRespawn++;
-
-                        //On reset tous les objets détruits 
-                        foreach(GameObject respawn in goToRespawn)
-                            if(!respawn.activeSelf)
-                                respawn.SetActive(true);
-
-                        //On remet les valeurs à un état normal
-                        sf_camera.position = new Vector3(sf_start.position.x + startOffset,sf_camera.position.y, sf_camera.position.z) ;
-                        sf_player.GetComponent<Transform>().position = sf_start.position;
-                        sf_canvas.SetActive(false);
-                        sf_player.SetActive(true);
-                        camera.setShouldMove(true);
-                        camera.speedCamera = camera.SpeedCameraBuff;
-                        playerScript.setDead(false);*/
+                        
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                         //On reprends une quetsion au hasard que l'on affichera pas avant la prochaine mort
                         sf_script.DieQuestion();
                         luckyDay = Random.Range(0, 3);
                     }
                 }
-                //Si le joueur à faux
-                else if(sf_script.userFindTrueRep() == -1){
-                    if(!sf_player.activeSelf && currentNbRespawn < numberOfRespawnMax && startDelay <= 0 && respawnDelay<=0 ){
-                    /*  respawnDelay = RepsawnDelayBuffer;
-                        currentNbRespawn++;
+          }
+          else if(respawnDelay<=0 && !levelEnded){
+                    sf_canvas.SetActive(false);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+              }
 
-                        //On reset tous les objets détruits 
-                        foreach(GameObject respawn in goToRespawn)
-                            if(!respawn.activeSelf)
-                                respawn.SetActive(true);
-
-                        //On remet les valeurs à un état normal
-                        sf_camera.position = new Vector3(sf_start.position.x + startOffset,sf_camera.position.y, sf_camera.position.z) ;
-                        sf_player.GetComponent<Transform>().position = sf_start.position;
-                        sf_canvas.SetActive(false);
-                        sf_player.SetActive(true);
-                        camera.setShouldMove(true);
-                        camera.speedCamera = camera.SpeedCameraBuff;
-                        playerScript.setDead(false);*/
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                        //On reprends une quetsion au hasard que l'on affichera pas avant la prochaine mort
-                        sf_script.DieQuestion();
-                    }
-                }
-            }
-            else if(respawnDelay<=0 && levelEnded){
-                sf_canvas.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-            else if(respawnDelay<=0 && !levelEnded){
-                sf_canvas.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-            else if(respawnDelay<=0 && !levelEnded){
-                sf_canvas.SetActive(false);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-           
-            
         }
-
     }
 
     /// <summary>
