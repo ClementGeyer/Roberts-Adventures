@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Scenes/Level01F.unity.meta
 <<<<<<< HEAD:Assets/Scenes/Clement.unity.meta
 guid: 014fb67c6cf26c648a1d4e8c78b5c76d
@@ -9,6 +10,13 @@ guid: f3daa253b0c4e6b4b93070ef1961a34f
 guid: bb104dfb42dc4bb45b62fd235a33c3b1
 folderAsset: yes
 >>>>>>> 2f72da78c727c30c2c8775ab500aee5108dc161e:Assets/Sprites/Plateformes.meta
+=======
+<<<<<<< HEAD:Assets/Scenes/Elouan.unity.meta
+guid: 75c10179622cfd948a0d3fda77c02382
+=======
+guid: 10db30022b1bdc443afce4a68a6838f5
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scenes/Clement.unity.meta
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0
 DefaultImporter:
   externalObjects: {}
   userData: 

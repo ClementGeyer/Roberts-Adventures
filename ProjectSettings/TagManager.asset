@@ -5,12 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - canBeDestroyed
+<<<<<<< HEAD
   - grappable
   - canKillPlayer
   - ProgressInfoToHide
   - bonusToHide
   - effectsToHide
   - movingObstacleToHide
+=======
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0
   layers:
   - Default
   - TransparentFX

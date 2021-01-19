@@ -42,6 +42,7 @@ public class GrapplingGun : MonoBehaviour
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
 
+<<<<<<< HEAD:Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs
     /// <summary>Enum qui permet de switch entre les différents types de calculs
     /// <example>Par exemple:
     /// <code>
@@ -50,6 +51,8 @@ public class GrapplingGun : MonoBehaviour
     ///     Cela va résulter dans le fait d'utiliser le transform plutot que la physique.
     /// </example>
     /// </summary>
+=======
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scripts/GrapplingGun.cs
     private enum LaunchType
     {
         Transform_Launch,
@@ -81,6 +84,7 @@ public class GrapplingGun : MonoBehaviour
                 Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
                 RotateGun(mousePos, true);
             }
+<<<<<<< HEAD:Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs
             
             //Si tout est prêt pour le grappin
             if (launchToPoint && grappleRope.isGrappling && launchType == LaunchType.Transform_Launch)
@@ -88,6 +92,13 @@ public class GrapplingGun : MonoBehaviour
                 //On va prendre notre position et la position de la cible
                 Vector2 pos = firePoint.position - gunHolder.localPosition;
                 Vector2 targetPos = grapplePoint - pos ;
+=======
+
+            if (launchToPoint && grappleRope.isGrappling && launchType == LaunchType.Transform_Launch)
+            {
+                Vector2 pos = firePoint.position - gunHolder.localPosition;
+                Vector2 targetPos = grapplePoint - pos;
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scripts/GrapplingGun.cs
                 gunHolder.position = Vector2.Lerp(gunHolder.position, targetPos, Time.deltaTime * launchSpeed);
             }
         }
@@ -122,22 +133,32 @@ public class GrapplingGun : MonoBehaviour
     {
         //On calcule la distance
         Vector3 distanceVector = lookPoint - gunPivot.position;
+<<<<<<< HEAD:Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs
         //On calcule l'angle
         float angle = Mathf.Atan2(distanceVector.y, distanceVector.x) * Mathf.Rad2Deg;
 
         //Si on doit rotate alors on applique la rotation sinon on regarde juste devant
+=======
+        float angle = Mathf.Atan2(distanceVector.y, distanceVector.x) * Mathf.Rad2Deg;
+
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scripts/GrapplingGun.cs
         if (rotateOverTime && allowRotationOverTime)
             gunPivot.rotation = Quaternion.Lerp(gunPivot.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * rotationSpeed);
         else
             gunPivot.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
+<<<<<<< HEAD:Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs
     /// <summary>Méthode qui permet de set le point d'accroche du grappin
     /// </summary>
+=======
+
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scripts/GrapplingGun.cs
     void SetGrapplePoint()
     {
         //On prends la distance
         Vector2 distanceVector = m_camera.ScreenToWorldPoint(Input.mousePosition) - gunPivot.position;
+<<<<<<< HEAD:Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs
         //On crée un raycast
         RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector);
 
@@ -152,6 +173,16 @@ public class GrapplingGun : MonoBehaviour
             grappleRope.enabled = true;
             //On fait jouer le son
             playGrappleSound();
+=======
+        RaycastHit2D _hit = Physics2D.Raycast(firePoint.position, distanceVector);
+
+        if (_hit && (_hit.transform.gameObject.layer == grappableLayerNumber || grappleToAll) &&
+            (Vector2.Distance(_hit.point, firePoint.position) <= maxDistance || !hasMaxDistance))
+        {
+            grapplePoint = _hit.point;
+            grappleDistanceVector = grapplePoint - (Vector2)gunPivot.position;
+            grappleRope.enabled = true;
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scripts/GrapplingGun.cs
         }
 
     }
@@ -195,10 +226,15 @@ public class GrapplingGun : MonoBehaviour
                 case LaunchType.Physics_Launch:
                     //Si Physics_Launch à été choisi
                     m_springJoint2D.connectedAnchor = grapplePoint;
+<<<<<<< HEAD:Assets/Scripts/Player/GrapplingGun/GrapplingGun.cs
                     //On calcule la distance
                     Vector2 distanceVector = firePoint.position - gunHolder.position;
                     //On l'applique au joint
                     m_springJoint2D.distance = distanceVector.magnitude/2;
+=======
+                    Vector2 distanceVector = firePoint.position - gunHolder.position;
+                    m_springJoint2D.distance = distanceVector.magnitude;
+>>>>>>> 8597d89e5e8707a9c786f00755b0b2f527890cc0:Assets/Scripts/GrapplingGun.cs
                     m_springJoint2D.frequency = launchSpeed;
                     m_springJoint2D.enabled = true;
                     break;
